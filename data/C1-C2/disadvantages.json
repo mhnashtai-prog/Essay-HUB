@@ -1,1 +1,225 @@
-
+{
+  "level": "C1-C2",
+  "category": "disadvantages",
+  "expressions": [
+    {
+      "id": "dis-c1-001",
+      "expression": "A salient drawback of",
+      "context": "___ unregulated markets is systemic instability",
+      "fullSentence": "A salient drawback of unregulated markets is systemic instability.",
+      "usage": "Highlighting a prominent disadvantage",
+      "note": "Salient = prominent, striking, noticeable",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "A salient drawback of automation is workforce displacement.",
+        "A salient drawback of centralization is reduced local autonomy."
+      ]
+    },
+    {
+      "id": "dis-c1-002",
+      "expression": "precipitates",
+      "context": "Economic inequality ___ social fragmentation",
+      "fullSentence": "Economic inequality precipitates social fragmentation and political instability.",
+      "usage": "Shows how something causes or triggers negative outcomes",
+      "note": "Precipitates = causes suddenly, triggers, brings about",
+      "synonyms": ["triggers", "catalyzes", "induces", "engenders"],
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Policy failure precipitates crisis.",
+        "Neglect precipitates systemic collapse."
+      ]
+    },
+    {
+      "id": "dis-c1-003",
+      "expression": "exacerbates",
+      "context": "Climate change ___ existing inequalities",
+      "fullSentence": "Climate change exacerbates existing inequalities between developed and developing nations.",
+      "usage": "Shows worsening of an already bad situation",
+      "note": "Exacerbates = makes worse, aggravates, intensifies",
+      "synonyms": ["aggravates", "intensifies", "compounds", "amplifies"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Corruption exacerbates poverty.",
+        "Delay exacerbates the problem."
+      ]
+    },
+    {
+      "id": "dis-c1-004",
+      "expression": "undermines",
+      "context": "Misinformation ___ democratic processes",
+      "fullSentence": "Misinformation undermines democratic processes and institutional credibility.",
+      "usage": "Shows gradual weakening or damage",
+      "note": "Undermines = weakens gradually, erodes, compromises",
+      "synonyms": ["erodes", "compromises", "weakens", "subverts"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Corruption undermines public trust.",
+        "Inequality undermines social cohesion."
+      ]
+    },
+    {
+      "id": "dis-c1-005",
+      "expression": "engenders",
+      "context": "Wealth concentration ___ resentment and instability",
+      "fullSentence": "Wealth concentration engenders resentment and threatens social stability.",
+      "usage": "Shows production of negative consequences",
+      "note": "Engenders = produces, gives rise to, causes",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Injustice engenders protest.",
+        "Opacity engenders suspicion."
+      ]
+    },
+    {
+      "id": "dis-c1-006",
+      "expression": "The principal deficiency of",
+      "context": "___ current policy is inadequate enforcement",
+      "fullSentence": "The principal deficiency of current policy is inadequate enforcement mechanisms.",
+      "usage": "Identifying the main weakness or shortcoming",
+      "note": "Deficiency = shortcoming, inadequacy, weakness",
+      "synonyms": ["shortcoming", "limitation", "weakness", "inadequacy"],
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "The principal deficiency of this approach is scalability.",
+        "The principal deficiency of the system is lack of accountability."
+      ]
+    },
+    {
+      "id": "dis-c1-007",
+      "expression": "impedes",
+      "context": "Bureaucratic inertia ___ innovation",
+      "fullSentence": "Bureaucratic inertia impedes innovation and adaptive capacity.",
+      "usage": "Shows obstruction or hindrance of progress",
+      "note": "Impedes = hinders, obstructs, blocks",
+      "synonyms": ["obstructs", "hinders", "constrains", "stifles"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Red tape impedes efficiency.",
+        "Corruption impedes development."
+      ]
+    },
+    {
+      "id": "dis-c1-008",
+      "expression": "compromises",
+      "context": "Data breaches ___ user privacy and institutional credibility",
+      "fullSentence": "Data breaches compromise user privacy and institutional credibility.",
+      "usage": "Shows endangering or weakening of something valuable",
+      "note": "Compromises = endangers, undermines, jeopardizes",
+      "synonyms": ["jeopardizes", "endangers", "threatens", "undermines"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Conflict compromises security.",
+        "Bias compromises objectivity."
+      ]
+    },
+    {
+      "id": "dis-c1-009",
+      "expression": "The inherent limitation of",
+      "context": "___ market mechanisms is externality neglect",
+      "fullSentence": "The inherent limitation of market mechanisms is their neglect of externalities.",
+      "usage": "Identifying built-in, fundamental weaknesses",
+      "note": "Inherent = intrinsic, built-in, fundamental",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The inherent limitation of algorithms is bias reproduction.",
+        "The inherent limitation of this model is oversimplification."
+      ]
+    },
+    {
+      "id": "dis-c1-010",
+      "expression": "perpetuates",
+      "context": "Systemic bias ___ inequality",
+      "fullSentence": "Systemic bias perpetuates inequality across generations.",
+      "usage": "Shows continuation or prolongation of negative conditions",
+      "note": "Perpetuates = maintains, continues, sustains",
+      "synonyms": ["maintains", "sustains", "prolongs", "preserves"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Poverty perpetuates lack of opportunity.",
+        "Discrimination perpetuates marginalization."
+      ]
+    },
+    {
+      "id": "dis-c1-011",
+      "expression": "militates against",
+      "context": "Short-term thinking ___ sustainable development",
+      "fullSentence": "Short-term thinking militates against sustainable development objectives.",
+      "usage": "Shows opposition or working against something",
+      "note": "Militates against = works against, opposes, prevents",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Corruption militates against good governance.",
+        "Inequality militates against social cohesion."
+      ]
+    },
+    {
+      "id": "dis-c1-012",
+      "expression": "Empirical evidence reveals that",
+      "context": "___ income inequality correlates with social problems",
+      "fullSentence": "Empirical evidence reveals that income inequality correlates with numerous social problems.",
+      "usage": "Presenting research-backed disadvantages",
+      "note": "Emphasizes evidence-based criticism",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Empirical evidence reveals that poverty impairs cognitive development.",
+        "Empirical evidence reveals that inequality undermines social trust."
+      ]
+    },
+    {
+      "id": "dis-c1-013",
+      "expression": "stifles",
+      "context": "Excessive regulation ___ entrepreneurship",
+      "fullSentence": "Excessive regulation stifles entrepreneurship and market dynamism.",
+      "usage": "Shows suppression or suffocation of positive developments",
+      "note": "Stifles = suppresses, suffocates, inhibits",
+      "synonyms": ["suppresses", "inhibits", "constrains", "restricts"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Censorship stifles creativity.",
+        "Conformity stifles innovation."
+      ]
+    },
+    {
+      "id": "dis-c1-014",
+      "expression": "poses formidable challenges to",
+      "context": "Climate change ___ food security",
+      "fullSentence": "Climate change poses formidable challenges to global food security.",
+      "usage": "Emphasizing serious, difficult problems",
+      "note": "Formidable = intimidating, serious, difficult",
+      "level": "C1-C2",
+      "formality": "formal",
+      "examples": [
+        "Inequality poses formidable challenges to democracy.",
+        "Aging populations pose formidable challenges to healthcare systems."
+      ]
+    },
+    {
+      "id": "dis-c1-015",
+      "expression": "The detrimental impact of",
+      "context": "___ pollution on public health is well-documented",
+      "fullSentence": "The detrimental impact of pollution on public health is well-documented.",
+      "usage": "Emphasizing harmful effects",
+      "note": "Detrimental = harmful, damaging, adverse",
+      "synonyms": ["adverse", "deleterious", "pernicious", "harmful"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "The detrimental impact of stress on health is significant.",
+        "The detrimental impact of inequality on society is profound."
+      ]
+    }
+  ]
+}
