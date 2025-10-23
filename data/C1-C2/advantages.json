@@ -1,1 +1,222 @@
-
+{
+  "level": "C1-C2",
+  "category": "advantages",
+  "expressions": [
+    {
+      "id": "adv-c1-001",
+      "expression": "A salient advantage of",
+      "context": "___ digitalization is enhanced accessibility",
+      "fullSentence": "A salient advantage of digitalization is enhanced accessibility to information.",
+      "usage": "Highlighting a prominent, noticeable advantage",
+      "note": "Salient = prominent, striking, most noticeable",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "A salient advantage of decentralization is increased local autonomy.",
+        "A salient advantage of this methodology is its reproducibility."
+      ]
+    },
+    {
+      "id": "adv-c1-002",
+      "expression": "facilitates",
+      "context": "Digital infrastructure ___ cross-border collaboration",
+      "fullSentence": "Digital infrastructure facilitates cross-border collaboration among researchers.",
+      "usage": "Shows how something makes a process easier or possible",
+      "pattern": "Subject + facilitates + noun/noun phrase",
+      "synonyms": ["enables", "expedites", "streamlines", "catalyzes"],
+      "level": "C1",
+      "formality": "very formal",
+      "examples": [
+        "Technology facilitates knowledge dissemination.",
+        "Clear communication facilitates effective teamwork."
+      ]
+    },
+    {
+      "id": "adv-c1-003",
+      "expression": "confers significant benefits",
+      "context": "Multilingualism ___ in cognitive development",
+      "fullSentence": "Multilingualism confers significant benefits in cognitive development.",
+      "usage": "Formal way to express granting or bestowing advantages",
+      "note": "Confer = formally grant or bestow",
+      "pattern": "Subject + confers + benefits/advantages + (on/upon)",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Advanced education confers competitive advantages in the job market.",
+        "This approach confers tangible benefits on all stakeholders."
+      ]
+    },
+    {
+      "id": "adv-c1-004",
+      "expression": "constitutes a marked improvement over",
+      "context": "This methodology ___ previous approaches",
+      "fullSentence": "This methodology constitutes a marked improvement over previous approaches.",
+      "usage": "Emphasizing significant advancement",
+      "note": "Marked = noticeable, significant",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "The new system constitutes a marked improvement over legacy infrastructure.",
+        "This policy constitutes a marked improvement over existing regulations."
+      ]
+    },
+    {
+      "id": "adv-c1-005",
+      "expression": "The paramount advantage of",
+      "context": "___ evidence-based policy is measurable outcomes",
+      "fullSentence": "The paramount advantage of evidence-based policy is its measurable outcomes.",
+      "usage": "Emphasizing the most important advantage",
+      "note": "Paramount = supreme, most important",
+      "synonyms": ["preeminent", "foremost", "principal"],
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "The paramount advantage of transparency is accountability.",
+        "The paramount advantage of this system is its scalability."
+      ]
+    },
+    {
+      "id": "adv-c1-006",
+      "expression": "affords unprecedented opportunities for",
+      "context": "Artificial intelligence ___ medical diagnosis",
+      "fullSentence": "Artificial intelligence affords unprecedented opportunities for medical diagnosis.",
+      "usage": "Formal expression for providing unique possibilities",
+      "note": "Affords = provides, gives; unprecedented = never seen before",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Globalization affords unprecedented opportunities for cultural exchange.",
+        "This technology affords unprecedented opportunities for innovation."
+      ]
+    },
+    {
+      "id": "adv-c1-007",
+      "expression": "engenders",
+      "context": "Collaborative learning ___ critical thinking skills",
+      "fullSentence": "Collaborative learning engenders critical thinking skills among students.",
+      "usage": "Formal way to express causing or producing something",
+      "note": "Engenders = causes, produces, gives rise to",
+      "pattern": "Subject + engenders + noun",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Transparency engenders public trust.",
+        "Diversity engenders innovation and creativity."
+      ]
+    },
+    {
+      "id": "adv-c1-008",
+      "expression": "yields tangible benefits in terms of",
+      "context": "Investment in infrastructure ___ economic growth",
+      "fullSentence": "Investment in infrastructure yields tangible benefits in terms of economic growth.",
+      "usage": "Emphasizing concrete, measurable advantages",
+      "note": "Tangible = real, concrete, measurable",
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Training yields tangible benefits in terms of productivity.",
+        "Research yields tangible benefits in terms of innovation."
+      ]
+    },
+    {
+      "id": "adv-c1-009",
+      "expression": "serves to amplify",
+      "context": "Social media ___ marginalized voices",
+      "fullSentence": "Social media serves to amplify marginalized voices in public discourse.",
+      "usage": "Shows how something increases or strengthens an effect",
+      "pattern": "Subject + serves to + verb",
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Technology serves to amplify human capabilities.",
+        "Education serves to amplify social mobility."
+      ]
+    },
+    {
+      "id": "adv-c1-010",
+      "expression": "optimizes",
+      "context": "Automation ___ resource allocation",
+      "fullSentence": "Automation optimizes resource allocation across complex systems.",
+      "usage": "Shows improvement to maximum efficiency",
+      "synonyms": ["maximizes", "enhances", "refines", "streamlines"],
+      "level": "C1",
+      "formality": "technical/formal",
+      "examples": [
+        "Data analytics optimizes decision-making processes.",
+        "AI optimizes supply chain management."
+      ]
+    },
+    {
+      "id": "adv-c1-011",
+      "expression": "mitigates the constraints inherent in",
+      "context": "Remote work ___ traditional office environments",
+      "fullSentence": "Remote work mitigates the constraints inherent in traditional office environments.",
+      "usage": "Shows reduction of limitations or restrictions",
+      "note": "Mitigates = reduces, lessens; inherent = built-in, intrinsic",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Technology mitigates the constraints inherent in geographic distance.",
+        "This approach mitigates the constraints inherent in conventional methods."
+      ]
+    },
+    {
+      "id": "adv-c1-012",
+      "expression": "catalyzes",
+      "context": "Innovation ___ economic transformation",
+      "fullSentence": "Innovation catalyzes economic transformation in developing regions.",
+      "usage": "Shows acceleration or triggering of change",
+      "note": "Catalyzes = accelerates, triggers, speeds up",
+      "synonyms": ["precipitates", "accelerates", "expedites", "fosters"],
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Investment catalyzes sustainable development.",
+        "Education catalyzes social progress."
+      ]
+    },
+    {
+      "id": "adv-c1-013",
+      "expression": "Empirical evidence substantiates the claim that",
+      "context": "___ early intervention improves outcomes",
+      "fullSentence": "Empirical evidence substantiates the claim that early intervention improves long-term outcomes.",
+      "usage": "Presenting research-backed advantages",
+      "note": "Substantiates = supports with evidence, validates",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Empirical evidence substantiates the claim that education reduces poverty.",
+        "Empirical evidence substantiates the claim that prevention is cost-effective."
+      ]
+    },
+    {
+      "id": "adv-c1-014",
+      "expression": "augments",
+      "context": "Technology ___ human cognitive capabilities",
+      "fullSentence": "Technology augments human cognitive capabilities rather than replacing them.",
+      "usage": "Shows enhancement or supplementation",
+      "note": "Augments = enhances, supplements, adds to",
+      "synonyms": ["enhances", "supplements", "amplifies", "bolsters"],
+      "level": "C1-C2",
+      "formality": "formal",
+      "examples": [
+        "Collaboration augments individual expertise.",
+        "Data augments decision-making quality."
+      ]
+    },
+    {
+      "id": "adv-c1-015",
+      "expression": "The underlying rationale for",
+      "context": "___ this approach is its proven efficacy",
+      "fullSentence": "The underlying rationale for this approach is its proven efficacy in diverse contexts.",
+      "usage": "Explaining fundamental reasoning behind an advantage",
+      "note": "Rationale = logical basis, reasoning; efficacy = effectiveness",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "The underlying rationale for reform is systemic dysfunction.",
+        "The underlying rationale for investment is long-term sustainability."
+      ]
+    }
+  ]
+}
