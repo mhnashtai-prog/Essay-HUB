@@ -1,1 +1,193 @@
-
+{
+  "level": "B2",
+  "category": "arguments",
+  "expressions": [
+    {
+      "id": "arg-001",
+      "expression": "The main argument in favour of",
+      "context": "___ capital punishment is deterrence",
+      "fullSentence": "The main argument in favour of capital punishment is deterrence.",
+      "usage": "Presenting the strongest supporting argument",
+      "note": "Use 'favor' in American English",
+      "opposite": "The main argument against...",
+      "level": "C1",
+      "formality": "very formal",
+      "examples": [
+        "The main argument in favour of free trade is economic growth.",
+        "The main argument in favour of vaccination is public health."
+      ]
+    },
+    {
+      "id": "arg-002",
+      "expression": "Proponents argue that",
+      "context": "___ genetic engineering could solve world hunger",
+      "fullSentence": "Proponents argue that genetic engineering could solve world hunger.",
+      "usage": "Introducing what supporters believe",
+      "opposite": "Opponents/Critics argue that...",
+      "variants": [
+        "Advocates suggest...",
+        "Supporters claim...",
+        "Proponents believe..."
+      ],
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "Proponents argue that technology improves quality of life.",
+        "Proponents argue that globalization benefits developing nations."
+      ]
+    },
+    {
+      "id": "arg-003",
+      "expression": "Critics claim that",
+      "context": "___ standardized tests fail to measure true intelligence",
+      "fullSentence": "Critics claim that standardized tests fail to measure true intelligence.",
+      "usage": "Presenting opposing viewpoints or criticism",
+      "variants": [
+        "Critics argue...",
+        "Critics maintain...",
+        "Critics contend...",
+        "Critics assert..."
+      ],
+      "opposite": "Supporters/Proponents claim that...",
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "Critics claim that social media harms mental health.",
+        "Critics claim that current policies are ineffective."
+      ]
+    },
+    {
+      "id": "arg-004",
+      "expression": "One criticism about",
+      "context": "___ consumerism is its environmental impact",
+      "fullSentence": "One criticism about consumerism is its environmental impact.",
+      "usage": "Introducing critical perspectives",
+      "variants": [
+        "A common criticism...",
+        "A major critique...",
+        "One objection..."
+      ],
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "One criticism about modern agriculture is pesticide use.",
+        "One criticism about capitalism is wealth inequality."
+      ]
+    },
+    {
+      "id": "arg-005",
+      "expression": "It is often argued that",
+      "context": "___ technology makes people less social",
+      "fullSentence": "It is often argued that technology makes people less social.",
+      "usage": "Presenting common viewpoints neutrally",
+      "variants": [
+        "It is commonly believed...",
+        "Many argue...",
+        "Some claim..."
+      ],
+      "tone": "Neutral - doesn't show if you agree or disagree",
+      "level": "B2-C1",
+      "formality": "formal",
+      "examples": [
+        "It is often argued that education should be free.",
+        "It is often argued that climate change requires urgent action."
+      ]
+    },
+    {
+      "id": "arg-006",
+      "expression": "Opponents contend that",
+      "context": "___ free trade harms domestic industries",
+      "fullSentence": "Opponents contend that free trade harms domestic industries.",
+      "usage": "Presenting opposition arguments formally",
+      "note": "Contend = argue/claim (very formal)",
+      "variants": [
+        "Opponents maintain...",
+        "Opponents assert...",
+        "Opponents argue..."
+      ],
+      "opposite": "Proponents/Supporters contend that...",
+      "level": "C1-C2",
+      "formality": "very formal",
+      "examples": [
+        "Opponents contend that nuclear energy is too risky.",
+        "Opponents contend that immigration reduces wages."
+      ]
+    },
+    {
+      "id": "arg-007",
+      "expression": "There is an ongoing debate about",
+      "context": "whether AI will benefit or harm humanity",
+      "fullSentence": "There is an ongoing debate about whether AI will benefit or harm humanity.",
+      "usage": "Introducing controversial topics",
+      "variants": [
+        "There is debate over...",
+        "X is hotly debated",
+        "X remains controversial"
+      ],
+      "structure": "Can follow with 'whether' or 'about/over + noun'",
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "There is an ongoing debate about the best education system.",
+        "There is an ongoing debate about climate policy effectiveness."
+      ]
+    },
+    {
+      "id": "arg-008",
+      "expression": "A common objection to",
+      "context": "___ wind farms is their visual impact on landscapes",
+      "fullSentence": "A common objection to wind farms is their visual impact on landscapes.",
+      "usage": "Presenting frequent criticisms",
+      "variants": [
+        "A frequent objection...",
+        "One objection...",
+        "Critics object that..."
+      ],
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "A common objection to taxation is government inefficiency.",
+        "A common objection to genetic modification is safety concerns."
+      ]
+    },
+    {
+      "id": "arg-009",
+      "expression": "Advocates maintain that",
+      "context": "___ veganism is the most ethical diet",
+      "fullSentence": "Advocates maintain that veganism is the most ethical diet.",
+      "usage": "Presenting what supporters strongly believe",
+      "note": "Maintain = argue/claim (suggests ongoing belief)",
+      "synonyms": [
+        "Advocates argue...",
+        "Advocates contend...",
+        "Advocates assert...",
+        "Advocates claim..."
+      ],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Advocates maintain that renewable energy is cost-effective.",
+        "Advocates maintain that education transforms societies."
+      ]
+    },
+    {
+      "id": "arg-010",
+      "expression": "Skeptics question whether",
+      "context": "___ renewable energy can truly replace fossil fuels",
+      "fullSentence": "Skeptics question whether renewable energy can truly replace fossil fuels.",
+      "usage": "Introducing doubts or uncertainties",
+      "variants": [
+        "Critics doubt that...",
+        "Some question whether...",
+        "There are doubts about..."
+      ],
+      "tone": "Shows uncertainty or criticism",
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Skeptics question whether technology solves fundamental problems.",
+        "Skeptics question whether current policies are adequate."
+      ]
+    }
+  ]
+}
