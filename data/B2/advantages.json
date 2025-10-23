@@ -1,1 +1,170 @@
-
+{
+  "level": "B2",
+  "category": "advantages",
+  "expressions": [
+    {
+      "id": "adv-001",
+      "expression": "One of the key advantages of",
+      "context": "___ remote work is increased flexibility",
+      "fullSentence": "One of the key advantages of remote work is increased flexibility.",
+      "usage": "Introducing the first or most important advantage",
+      "variants": [
+        "One of the main benefits of...",
+        "A key advantage of...",
+        "The primary benefit of..."
+      ],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "One of the key advantages of online learning is accessibility.",
+        "One of the key advantages of renewable energy is environmental sustainability."
+      ]
+    },
+    {
+      "id": "adv-002",
+      "expression": "enables",
+      "context": "Online learning ___ students to study at their own pace",
+      "fullSentence": "Online learning enables students to study at their own pace.",
+      "usage": "Shows how something gives ability or opportunity",
+      "pattern": "Subject + enables + object + to + verb",
+      "synonyms": ["allows", "permits", "makes it possible for", "empowers"],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "Technology enables us to communicate instantly.",
+        "This system enables workers to access data remotely."
+      ]
+    },
+    {
+      "id": "adv-003",
+      "expression": "encourages",
+      "context": "Social media ___ people to stay connected",
+      "fullSentence": "Social media encourages people to stay connected with friends and family.",
+      "usage": "Shows positive influence or promotion",
+      "pattern": "Subject + encourages + object + to + verb",
+      "synonyms": ["promotes", "facilitates", "fosters", "stimulates"],
+      "level": "B2",
+      "formality": "formal",
+      "tone": "positive",
+      "examples": [
+        "The program encourages students to think critically.",
+        "This policy encourages companies to invest in green technology."
+      ]
+    },
+    {
+      "id": "adv-004",
+      "expression": "make it easier to",
+      "context": "Electric vehicles ___ reduce carbon emissions",
+      "fullSentence": "Electric vehicles make it easier to reduce carbon emissions.",
+      "usage": "Shows how something simplifies or improves a process",
+      "pattern": "Subject + makes it easier to + verb",
+      "variants": [
+        "makes it possible to...",
+        "makes it simpler to...",
+        "facilitates..."
+      ],
+      "level": "B2",
+      "formality": "neutral",
+      "examples": [
+        "Apps make it easier to track expenses.",
+        "This tool makes it easier to organize information."
+      ]
+    },
+    {
+      "id": "adv-005",
+      "expression": "The main argument in favour of",
+      "context": "___ renewable energy is environmental sustainability",
+      "fullSentence": "The main argument in favour of renewable energy is environmental sustainability.",
+      "usage": "Presenting the strongest supporting argument",
+      "level": "C1",
+      "formality": "very formal",
+      "note": "Use 'favor' in American English",
+      "examples": [
+        "The main argument in favour of public transport is reducing congestion.",
+        "The main argument in favour of this policy is economic efficiency."
+      ]
+    },
+    {
+      "id": "adv-006",
+      "expression": "One positive aspect of",
+      "context": "___ urbanization is improved access to services",
+      "fullSentence": "One positive aspect of urbanization is improved access to services.",
+      "usage": "More neutral than 'advantage' - good for balanced essays",
+      "variants": [
+        "A positive aspect of...",
+        "One benefit of...",
+        "A favorable feature of..."
+      ],
+      "opposite": "One negative aspect of...",
+      "level": "B2-C1",
+      "formality": "formal",
+      "examples": [
+        "One positive aspect of technology is increased efficiency.",
+        "One positive aspect of globalization is cultural exchange."
+      ]
+    },
+    {
+      "id": "adv-007",
+      "expression": "helps",
+      "context": "Public transportation ___ reduce traffic congestion",
+      "fullSentence": "Public transportation helps reduce traffic congestion in cities.",
+      "usage": "Showing contribution to a positive outcome",
+      "pattern": "Subject + helps (to) + verb",
+      "note": "'to' is optional: helps reduce = helps to reduce",
+      "level": "B2",
+      "formality": "neutral",
+      "examples": [
+        "Exercise helps improve mental health.",
+        "This method helps students learn faster."
+      ]
+    },
+    {
+      "id": "adv-008",
+      "expression": "A major benefit of",
+      "context": "___ bilingualism is enhanced cognitive flexibility",
+      "fullSentence": "A major benefit of bilingualism is enhanced cognitive flexibility.",
+      "usage": "Highlighting an important positive point",
+      "synonyms": [
+        "A significant advantage",
+        "A key strength",
+        "An important plus"
+      ],
+      "level": "B2+",
+      "formality": "formal",
+      "examples": [
+        "A major benefit of exercise is stress reduction.",
+        "A major benefit of this approach is cost savings."
+      ]
+    },
+    {
+      "id": "adv-009",
+      "expression": "permits",
+      "context": "Automation ___ companies to increase productivity",
+      "fullSentence": "Automation permits companies to increase productivity significantly.",
+      "usage": "Academic and business contexts (more formal than 'allows')",
+      "pattern": "Subject + permits + object + to + verb",
+      "synonyms": ["allows", "enables", "makes it possible for"],
+      "level": "B2-C1",
+      "formality": "very formal",
+      "examples": [
+        "This policy permits greater flexibility.",
+        "The system permits users to customize settings."
+      ]
+    },
+    {
+      "id": "adv-010",
+      "expression": "let",
+      "context": "Flexible working hours ___ employees balance work and personal life",
+      "fullSentence": "Flexible working hours let employees balance work and personal life more effectively.",
+      "usage": "Less formal - better for general essays, not academic",
+      "pattern": "Subject + lets + object + bare infinitive (no 'to')",
+      "note": "Use 'allow' or 'enable' for formal writing",
+      "level": "B2",
+      "formality": "informal",
+      "examples": [
+        "Technology lets us work from anywhere.",
+        "This app lets you track your progress."
+      ]
+    }
+  ]
+}
