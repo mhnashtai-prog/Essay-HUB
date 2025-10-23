@@ -1,1 +1,237 @@
-
+{
+  "level": "B2",
+  "category": "balancing",
+  "expressions": [
+    {
+      "id": "bal-001",
+      "expression": "On the one hand / On the other hand",
+      "context": "___ social media connects people. ___ it can be addictive",
+      "fullSentence": "On the one hand, social media connects people. On the other hand, it can be addictive.",
+      "usage": "Presenting contrasting viewpoints (ALWAYS use both together)",
+      "structure": "First paragraph: On the one hand... Second: On the other hand...",
+      "note": "NEVER use 'on one hand' - must include 'the'",
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "On the one hand, technology increases efficiency. On the other hand, it eliminates jobs.",
+        "On the one hand, tourism boosts economy. On the other hand, it harms environment."
+      ]
+    },
+    {
+      "id": "bal-002",
+      "expression": "While / it also",
+      "context": "___ technology improves efficiency, ___ threatens jobs",
+      "fullSentence": "While technology improves efficiency, it also threatens jobs.",
+      "usage": "Showing contrast in one sentence",
+      "variants": [
+        "Although...",
+        "Whilst... (UK)",
+        "Even though..."
+      ],
+      "structure": "Concession first, then main point",
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "While education is important, it also requires significant investment.",
+        "While globalization creates opportunities, it also increases inequality."
+      ]
+    },
+    {
+      "id": "bal-003",
+      "expression": "Despite the benefits",
+      "context": "___ globalization has significant drawbacks",
+      "fullSentence": "Despite the benefits, globalization has significant drawbacks.",
+      "usage": "Acknowledging positives before presenting negatives",
+      "pattern": "Despite + noun, main clause",
+      "variants": [
+        "In spite of...",
+        "Notwithstanding... (very formal)"
+      ],
+      "note": "NEVER 'despite of' - it's incorrect!",
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "Despite the advantages, remote work has challenges.",
+        "Despite the progress, problems remain."
+      ]
+    },
+    {
+      "id": "bal-004",
+      "expression": "However",
+      "context": "___ not all the effects of urbanization are positive",
+      "fullSentence": "However, not all the effects of urbanization are positive.",
+      "usage": "Introducing contrasting point or change of direction",
+      "punctuation": "However, (comma after) OR ; however, (semicolon before)",
+      "variants": [
+        "Nevertheless",
+        "Nonetheless",
+        "Yet",
+        "Still"
+      ],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "However, this approach has limitations.",
+        "However, the situation is more complex than it appears."
+      ]
+    },
+    {
+      "id": "bal-005",
+      "expression": "Although / it lacks",
+      "context": "___ online learning offers flexibility, ___ face-to-face interaction",
+      "fullSentence": "Although online learning offers flexibility, it lacks face-to-face interaction.",
+      "usage": "Acknowledging one side before presenting the other",
+      "structure": "Although + concession, main point",
+      "variants": [
+        "Though",
+        "Even though",
+        "While",
+        "Whilst"
+      ],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "Although technology is useful, it cannot replace human judgment.",
+        "Although the plan sounds good, it lacks practical details."
+      ]
+    },
+    {
+      "id": "bal-006",
+      "expression": "In conclusion / the advantages outweigh the disadvantages",
+      "context": "___ ___ when implementing new technology",
+      "fullSentence": "In conclusion, the advantages outweigh the disadvantages when implementing new technology.",
+      "usage": "Signaling final paragraph and giving verdict",
+      "phrase": "outweigh = are stronger/more important than",
+      "variants": [
+        "To sum up",
+        "Overall",
+        "All things considered",
+        "To conclude"
+      ],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "In conclusion, the benefits outweigh the costs.",
+        "To conclude, the advantages clearly outweigh the drawbacks."
+      ]
+    },
+    {
+      "id": "bal-007",
+      "expression": "Weighing up both sides",
+      "context": "___ I believe the benefits are more significant",
+      "fullSentence": "Weighing up both sides, I believe the benefits are more significant.",
+      "usage": "Showing you've considered all arguments before concluding",
+      "variants": [
+        "Having considered both sides...",
+        "Taking everything into account...",
+        "After careful consideration..."
+      ],
+      "tone": "Balanced, thoughtful conclusion",
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Weighing up both sides, the evidence supports this approach.",
+        "Weighing up both sides, reform appears necessary."
+      ]
+    },
+    {
+      "id": "bal-008",
+      "expression": "It is worth noting that",
+      "context": "___ renewable energy requires significant initial investment",
+      "fullSentence": "It is worth noting that renewable energy requires significant initial investment.",
+      "usage": "Adding important additional information",
+      "variants": [
+        "It should be noted that...",
+        "It is important to note...",
+        "Notably..."
+      ],
+      "context": "Drawing attention to significant points",
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "It is worth noting that results may vary.",
+        "It is worth noting that not all experts agree."
+      ]
+    },
+    {
+      "id": "bal-009",
+      "expression": "Nevertheless",
+      "context": "___ the long-term benefits justify the costs",
+      "fullSentence": "Nevertheless, the long-term benefits justify the costs.",
+      "usage": "Showing contrast after acknowledging opposing point",
+      "meaning": "'Despite what was just said' - stronger than 'however'",
+      "synonyms": [
+        "Nonetheless",
+        "Even so",
+        "That said",
+        "Having said that"
+      ],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Nevertheless, action must be taken.",
+        "Nevertheless, the policy has merit."
+      ]
+    },
+    {
+      "id": "bal-010",
+      "expression": "Taking everything into account",
+      "context": "___ the positives outweigh the negatives",
+      "fullSentence": "Taking everything into account, the positives outweigh the negatives.",
+      "usage": "Final conclusion after considering all points",
+      "variants": [
+        "All things considered",
+        "On balance",
+        "Overall",
+        "In the final analysis"
+      ],
+      "phrase": "X outweighs Y = X is more important/significant than Y",
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Taking everything into account, the decision was correct.",
+        "Taking everything into account, reform is necessary."
+      ]
+    },
+    {
+      "id": "bal-011",
+      "expression": "That being said",
+      "context": "___ we must acknowledge the environmental concerns",
+      "fullSentence": "That being said, we must acknowledge the environmental concerns.",
+      "usage": "Introducing contrasting point or limitation",
+      "meaning": "'Despite what I just mentioned'",
+      "variants": [
+        "That said",
+        "Having said that",
+        "With that in mind"
+      ],
+      "level": "C1",
+      "formality": "less formal than 'nevertheless'",
+      "examples": [
+        "That being said, challenges remain.",
+        "That being said, not all solutions are effective."
+      ]
+    },
+    {
+      "id": "bal-012",
+      "expression": "From my perspective",
+      "context": "___ the disadvantages are more significant",
+      "fullSentence": "From my perspective, the disadvantages are more significant.",
+      "usage": "Expressing personal opinion in conclusion",
+      "variants": [
+        "In my view",
+        "From my point of view",
+        "In my opinion",
+        "I believe that",
+        "It is my belief that"
+      ],
+      "note": "Use in conclusion after presenting both sides",
+      "level": "B2-C1",
+      "formality": "formal",
+      "examples": [
+        "From my perspective, education is the key priority.",
+        "From my perspective, immediate action is required."
+      ]
+    }
+  ]
+}
