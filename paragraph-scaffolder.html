@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTUITY – Paragraph Scaffolder</title>
+  <title>INTUITY – Cambridge Essay Builder</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -132,6 +132,91 @@
       margin-right: auto;
     }
 
+    /* Essay Type Toggle Bar */
+    .essay-type-selector {
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .selector-header {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .type-toggles {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .type-toggle {
+      flex: 1;
+      min-width: 140px;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .type-toggle:hover {
+      border-color: var(--beige-border);
+      background: var(--beige-dim);
+      transform: translateY(-2px);
+    }
+
+    .type-toggle.active {
+      border-color: var(--beige);
+      background: var(--beige-dim);
+    }
+
+    .type-toggle.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .type-toggle-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .type-toggle-level {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .type-toggle.active .type-toggle-name {
+      color: var(--beige);
+    }
+
+    .coming-soon-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--red);
+      color: white;
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
     /* Topic Selector */
     .topic-selector {
       background: var(--panel);
@@ -151,7 +236,7 @@
 
     .topic-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
     }
 
@@ -179,22 +264,23 @@
     }
 
     .topic-icon {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     .topic-name {
       font-weight: 600;
       color: var(--text);
+      font-size: 0.9rem;
     }
 
-    /* Paragraph Builder */
+    /* Builder Container */
     .builder-container {
       display: grid;
       grid-template-columns: 280px 1fr;
       gap: 24px;
     }
 
-    /* Left: Paragraph Type Selector */
+    /* Left: Paragraph Types */
     .paragraph-types {
       background: var(--panel);
       backdrop-filter: blur(20px);
@@ -262,7 +348,7 @@
       opacity: 1;
     }
 
-    /* Right: Scaffolder */
+    /* Scaffolder */
     .scaffolder {
       background: var(--panel);
       backdrop-filter: blur(20px);
@@ -442,7 +528,7 @@
       border-radius: 4px;
     }
 
-    /* Cambridge Criteria Indicator */
+    /* Cambridge Criteria */
     .criteria-hint {
       margin-left: 44px;
       margin-top: 8px;
@@ -478,12 +564,6 @@
       transform: translateY(-1px);
     }
 
-    .next-step-btn:disabled {
-      background: var(--muted);
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-
     .skip-btn {
       padding: 10px 24px;
       background: transparent;
@@ -500,7 +580,7 @@
       color: var(--beige);
     }
 
-    /* Completion Screen */
+    /* Completion */
     .completion-screen {
       display: none;
       text-align: center;
@@ -571,7 +651,7 @@
       color: var(--beige);
     }
 
-    /* Full Essay Modal */
+    /* Modal */
     .modal {
       position: fixed;
       inset: 0;
@@ -611,9 +691,6 @@
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .modal-close:hover {
@@ -662,8 +739,12 @@
         position: static;
       }
 
-      .topic-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      .type-toggles {
+        flex-direction: column;
+      }
+
+      .type-toggle {
+        min-width: auto;
       }
     }
   </style>
@@ -675,7 +756,7 @@
       <div class="logo">IN</div>
       <div>
         <div class="brand-text">INTUITY</div>
-        <div class="subtitle">Paragraph Scaffolder</div>
+        <div class="subtitle">Cambridge Essay Builder</div>
       </div>
     </div>
 
@@ -694,6 +775,14 @@
 
   <main class="main-container">
     
+    <!-- Essay Type Toggle Bar -->
+    <div class="essay-type-selector">
+      <div class="selector-header">Essay Type (Select based on exam question)</div>
+      <div class="type-toggles" id="essayTypeToggles">
+        <!-- Dynamically populated based on level -->
+      </div>
+    </div>
+
     <!-- Topic Selector -->
     <div class="topic-selector">
       <div class="topic-header">Choose Your Topic</div>
@@ -721,60 +810,34 @@
       </div>
     </div>
 
-    <!-- Builder Container -->
+    <!-- Builder -->
     <div class="builder-container">
       
-      <!-- Left: Paragraph Types -->
       <div class="paragraph-types">
-        <div class="types-title">Essay Structure</div>
-        
-        <div class="type-option active" data-type="introduction">
-          <div class="type-icon">🎯</div>
-          <div class="type-label">Introduction</div>
-          <div class="check-icon">✓</div>
-        </div>
-
-        <div class="type-option" data-type="body1">
-          <div class="type-icon">💡</div>
-          <div class="type-label">Body Para 1</div>
-          <div class="check-icon">✓</div>
-        </div>
-
-        <div class="type-option" data-type="body2">
-          <div class="type-icon">💡</div>
-          <div class="type-label">Body Para 2</div>
-          <div class="check-icon">✓</div>
-        </div>
-
-        <div class="type-option" data-type="body3">
-          <div class="type-icon">💡</div>
-          <div class="type-label">Body Para 3</div>
-          <div class="check-icon">✓</div>
-        </div>
-
-        <div class="type-option" data-type="conclusion">
-          <div class="type-icon">✅</div>
-          <div class="type-label">Conclusion</div>
-          <div class="check-icon">✓</div>
+        <div class="types-title" id="structureTitle">Essay Structure</div>
+        <div id="paragraphTypesList">
+          <!-- Dynamically populated based on essay type -->
         </div>
       </div>
 
-      <!-- Right: Scaffolder -->
       <div class="scaffolder">
         <div class="scaffolder-header">
-          <div class="para-title" id="paraTitle">Introduction Paragraph</div>
+          <div class="para-title" id="paraTitle">Select Essay Type</div>
           <button class="view-full-btn" id="viewFullBtn">View Full Essay</button>
         </div>
 
         <div id="stepsContainer">
-          <!-- Steps will be dynamically loaded here -->
+          <div style="text-align:center; padding:60px 20px; color:var(--muted);">
+            <div style="font-size:3rem; margin-bottom:20px;">👆</div>
+            <div style="font-size:1.2rem; margin-bottom:10px;">Select an essay type above to begin</div>
+            <div style="font-size:0.9rem;">Choose the type that matches your exam question</div>
+          </div>
         </div>
 
-        <!-- Completion Screen -->
         <div class="completion-screen" id="completionScreen">
           <div class="completion-icon">🎉</div>
           <div class="completion-title">Paragraph Complete!</div>
-          <div class="completion-text">Great work! Ready to move to the next section?</div>
+          <div class="completion-text">Great work! Ready for the next section?</div>
           <div class="completion-actions">
             <button class="action-button primary-action" id="nextParaBtn">Next Paragraph</button>
             <button class="action-button secondary-action" id="viewEssayBtn">View Full Essay</button>
@@ -787,224 +850,183 @@
 
   </main>
 
-  <!-- Full Essay Modal -->
+  <!-- Modal -->
   <div class="modal" id="essayModal">
     <div class="modal-content">
       <button class="modal-close" id="closeModal">×</button>
-      <div class="essay-title" id="essayTopicTitle">Your Essay: Social Media</div>
-      <div id="essayContent">
-        <!-- Essay paragraphs will be displayed here -->
-      </div>
+      <div class="essay-title" id="essayTopicTitle">Your Essay</div>
+      <div id="essayContent"></div>
       <div class="essay-actions">
         <button class="action-button primary-action" id="saveEssayBtn">💾 Save Essay</button>
-        <button class="action-button secondary-action" id="copyEssayBtn">📋 Copy to Clipboard</button>
+        <button class="action-button secondary-action" id="copyEssayBtn">📋 Copy</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Data structure for paragraph steps
-    const paragraphStructures = {
-      introduction: {
-        title: 'Introduction Paragraph',
-        steps: [
-          {
-            number: 1,
-            title: 'Opening Statement',
-            subtitle: 'Hook the reader with a general statement about the topic',
-            expressions: [
-              'In today\'s society,',
-              'In recent years,',
-              'Nowadays,',
-              'In an era characterised by',
-              'It is often said that'
-            ],
-            placeholder: 'Start with a broad statement about your topic...',
-            criteria: 'Cambridge: Content - Introduce the topic clearly'
+    // Essay Type Configurations
+    const essayTypes = {
+      opinion: {
+        name: 'Opinion / Advantages-Disadvantages',
+        levels: ['b2', 'c1', 'c2'],
+        active: true,
+        structure: {
+          introduction: {
+            title: 'Introduction',
+            steps: [
+              {
+                number: 1,
+                title: 'Opening Statement',
+                subtitle: 'Hook the reader with a general statement',
+                expressions: ['In today\'s society,', 'In recent years,', 'Nowadays,', 'It is often said that'],
+                placeholder: 'Start with a broad statement about your topic...',
+                criteria: 'Cambridge: Content - Introduce the topic clearly'
+              },
+              {
+                number: 2,
+                title: 'Context & Background',
+                subtitle: 'Why this topic is important',
+                expressions: [],
+                placeholder: 'Explain why this topic matters...',
+                criteria: 'Cambridge: Communicative Achievement - Develop context'
+              },
+              {
+                number: 3,
+                title: 'Present Different Views',
+                subtitle: 'Show different perspectives',
+                expressions: ['While some argue that', 'On the one hand... On the other hand', 'Opinions are divided on'],
+                placeholder: 'Mention different viewpoints...',
+                criteria: 'Cambridge: Organization - Show awareness of perspectives'
+              },
+              {
+                number: 4,
+                title: 'Your Thesis Statement',
+                subtitle: 'State YOUR position clearly',
+                expressions: ['From my perspective,', 'In my view,', 'I believe that', 'This essay will argue that'],
+                placeholder: 'State your main position...',
+                criteria: 'Cambridge: Content - Clear thesis statement'
+              }
+            ]
           },
-          {
-            number: 2,
-            title: 'Context & Background',
-            subtitle: 'Add more details about why this topic is important or relevant',
-            expressions: [],
-            placeholder: 'Explain why this topic matters or give some background information...',
-            criteria: 'Cambridge: Communicative Achievement - Develop the context'
+          body: {
+            title: 'Body Paragraph',
+            steps: [
+              {
+                number: 1,
+                title: 'Topic Sentence',
+                subtitle: 'Main point of this paragraph',
+                expressions: ['One of the key advantages of', 'One of the disadvantages of', 'A significant drawback of'],
+                placeholder: 'What is the main point?',
+                criteria: 'Cambridge: Organization - Clear topic sentence'
+              },
+              {
+                number: 2,
+                title: 'Explain Your Claim',
+                subtitle: 'Develop the idea - WHY/HOW',
+                expressions: ['This is because', 'The reason for this is that', 'In other words,'],
+                placeholder: 'Explain in detail...',
+                criteria: 'Cambridge: Content - Develop ideas fully'
+              },
+              {
+                number: 3,
+                title: 'Evidence or Example',
+                subtitle: 'Support with concrete evidence',
+                expressions: ['For instance,', 'For example,', 'This can be seen in', 'Research shows that'],
+                placeholder: 'Give a specific example...',
+                criteria: 'Cambridge: Language - Use appropriate examples'
+              },
+              {
+                number: 4,
+                title: 'Link or Conclude',
+                subtitle: 'Connect to next idea (optional)',
+                expressions: ['Furthermore,', 'Moreover,', 'Consequently,', 'Therefore,'],
+                placeholder: 'Link to next point...',
+                criteria: 'Cambridge: Communicative Achievement - Cohesion'
+              }
+            ]
           },
-          {
-            number: 3,
-            title: 'Present Different Views',
-            subtitle: 'Show that there are different perspectives on this issue',
-            expressions: [
-              'While some argue that',
-              'On the one hand... On the other hand',
-              'Although many believe that',
-              'There is ongoing debate about',
-              'Opinions are divided on'
-            ],
-            placeholder: 'Mention different viewpoints on this topic...',
-            criteria: 'Cambridge: Organization - Show awareness of different perspectives'
-          },
-          {
-            number: 4,
-            title: 'Your Thesis Statement',
-            subtitle: 'Clearly state YOUR position or main argument',
-            expressions: [
-              'From my perspective,',
-              'In my view,',
-              'I believe that',
-              'It is my contention that',
-              'This essay will argue that'
-            ],
-            placeholder: 'State your main position clearly...',
-            criteria: 'Cambridge: Content - Clear thesis statement'
+          conclusion: {
+            title: 'Conclusion',
+            steps: [
+              {
+                number: 1,
+                title: 'Signal Conclusion',
+                subtitle: 'Let reader know you\'re concluding',
+                expressions: ['In conclusion,', 'Taking everything into account,', 'Weighing up both sides,', 'On balance,'],
+                placeholder: 'Start your conclusion...',
+                criteria: 'Cambridge: Organization - Clear conclusion marker'
+              },
+              {
+                number: 2,
+                title: 'Summarize Main Points',
+                subtitle: 'Briefly recap key arguments',
+                expressions: [],
+                placeholder: 'Summarize your main points...',
+                criteria: 'Cambridge: Content - Summarize key points'
+              },
+              {
+                number: 3,
+                title: 'Restate Your Position',
+                subtitle: 'Clearly restate your opinion',
+                expressions: ['From my perspective,', 'It is my belief that', 'I firmly believe that'],
+                placeholder: 'Restate your position...',
+                criteria: 'Cambridge: Content - Clear final position'
+              },
+              {
+                number: 4,
+                title: 'Final Thought',
+                subtitle: 'End with broader implication (optional)',
+                expressions: ['Looking ahead,', 'Ultimately,', 'Moving forward,'],
+                placeholder: 'End with a final thought...',
+                criteria: 'Cambridge: Communicative Achievement - Strong ending'
+              }
+            ]
           }
-        ]
+        },
+        paragraphs: ['introduction', 'body1', 'body2', 'body3', 'conclusion']
       },
-      body: {
-        title: 'Body Paragraph',
-        steps: [
-          {
-            number: 1,
-            title: 'Topic Sentence (Main Claim)',
-            subtitle: 'State the main idea of this paragraph',
-            expressions: [
-              'One of the key advantages of',
-              'One of the disadvantages of',
-              'The main argument in favour of',
-              'A significant drawback of',
-              'One positive aspect of'
-            ],
-            placeholder: 'What is the main point of this paragraph?',
-            criteria: 'Cambridge: Organization - Clear topic sentence'
-          },
-          {
-            number: 2,
-            title: 'Explain Your Claim',
-            subtitle: 'Develop the idea - explain WHY or HOW',
-            expressions: [
-              'This is because',
-              'The reason for this is that',
-              'In other words,',
-              'What this means is that',
-              'This can be attributed to'
-            ],
-            placeholder: 'Explain your claim in more detail...',
-            criteria: 'Cambridge: Content - Develop ideas fully'
-          },
-          {
-            number: 3,
-            title: 'Evidence or Example',
-            subtitle: 'Support your claim with concrete evidence or examples',
-            expressions: [
-              'For instance,',
-              'For example,',
-              'This can be seen in',
-              'Research shows that',
-              'Studies have demonstrated that'
-            ],
-            placeholder: 'Give a specific example or evidence...',
-            criteria: 'Cambridge: Language - Use appropriate examples'
-          },
-          {
-            number: 4,
-            title: 'Link or Conclude',
-            subtitle: 'Link to next idea OR conclude the paragraph (optional)',
-            expressions: [
-              'Furthermore,',
-              'Moreover,',
-              'Consequently,',
-              'As a result,',
-              'Therefore,'
-            ],
-            placeholder: 'Connect to the next point or wrap up this paragraph...',
-            criteria: 'Cambridge: Communicative Achievement - Cohesion'
-          }
-        ]
+      problemSolution: {
+        name: 'Problem & Solution',
+        levels: ['b2', 'c1', 'c2'],
+        active: false,
+        comingSoon: true
       },
-      conclusion: {
-        title: 'Conclusion Paragraph',
-        steps: [
-          {
-            number: 1,
-            title: 'Signal Conclusion',
-            subtitle: 'Let the reader know you are concluding',
-            expressions: [
-              'In conclusion,',
-              'Taking everything into account,',
-              'Weighing up both sides,',
-              'To sum up,',
-              'On balance,'
-            ],
-            placeholder: 'Start your conclusion...',
-            criteria: 'Cambridge: Organization - Clear conclusion marker'
-          },
-          {
-            number: 2,
-            title: 'Summarize Main Points',
-            subtitle: 'Briefly recap your key arguments (don\'t repeat exactly)',
-            expressions: [],
-            placeholder: 'Summarize your main points...',
-            criteria: 'Cambridge: Content - Summarize key points'
-          },
-          {
-            number: 3,
-            title: 'Restate Your Position',
-            subtitle: 'Clearly restate your opinion or thesis',
-            expressions: [
-              'From my perspective,',
-              'It is my belief that',
-              'I firmly believe that',
-              'In my view,',
-              'I would argue that'
-            ],
-            placeholder: 'Restate your position clearly...',
-            criteria: 'Cambridge: Content - Clear final position'
-          },
-          {
-            number: 4,
-            title: 'Final Thought (Optional)',
-            subtitle: 'End with a broader implication or future outlook',
-            expressions: [
-              'Looking ahead,',
-              'In the future,',
-              'Ultimately,',
-              'It is essential that',
-              'Moving forward,'
-            ],
-            placeholder: 'End with a final thought or recommendation...',
-            criteria: 'Cambridge: Communicative Achievement - Strong ending'
-          }
-        ]
+      causeEffect: {
+        name: 'Cause & Effect',
+        levels: ['c1', 'c2'],
+        active: false,
+        comingSoon: true
+      },
+      suggestions: {
+        name: 'Suggestions & Justifying',
+        levels: ['c1', 'c2'],
+        active: false,
+        comingSoon: true
+      },
+      speculation: {
+        name: 'Speculation',
+        levels: ['c2'],
+        active: false,
+        comingSoon: true
       }
     };
 
     // State
     let currentLevel = 'b2';
+    let currentEssayType = 'opinion';
     let currentTopic = 'social-media';
-    let currentParagraphType = 'introduction';
+    let currentParagraphType = null;
     let currentStepIndex = 0;
-    let essayData = {
-      introduction: ['', '', '', ''],
-      body1: ['', '', '', ''],
-      body2: ['', '', '', ''],
-      body3: ['', '', '', ''],
-      conclusion: ['', '', '', '']
-    };
+    let essayData = {};
 
-    // DOM Elements
+    // DOM
     const levelBtns = document.querySelectorAll('.level-btn');
+    const essayTypeToggles = document.getElementById('essayTypeToggles');
     const topicCards = document.querySelectorAll('.topic-card');
-    const typeOptions = document.querySelectorAll('.type-option');
+    const paragraphTypesList = document.getElementById('paragraphTypesList');
     const stepsContainer = document.getElementById('stepsContainer');
     const completionScreen = document.getElementById('completionScreen');
     const paraTitle = document.getElementById('paraTitle');
-    const viewFullBtn = document.getElementById('viewFullBtn');
-    const nextParaBtn = document.getElementById('nextParaBtn');
-    const viewEssayBtn = document.getElementById('viewEssayBtn');
-    const essayModal = document.getElementById('essayModal');
-    const closeModal = document.getElementById('closeModal');
-    const saveEssayBtn = document.getElementById('saveEssayBtn');
-    const copyEssayBtn = document.getElementById('copyEssayBtn');
 
     // Level Toggle
     levelBtns.forEach(btn => {
@@ -1012,32 +1034,106 @@
         levelBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentLevel = btn.dataset.level;
+        renderEssayTypeToggles();
         showNotification(`Level: ${btn.textContent}`);
       });
     });
 
-    // Topic Selection
-    topicCards.forEach(card => {
-      card.addEventListener('click', () => {
-        topicCards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        currentTopic = card.dataset.topic;
-        showNotification(`Topic: ${card.querySelector('.topic-name').textContent}`);
+    // Render Essay Type Toggles
+    function renderEssayTypeToggles() {
+      essayTypeToggles.innerHTML = '';
+      
+      Object.entries(essayTypes).forEach(([key, type]) => {
+        const available = type.levels.includes(currentLevel);
+        const toggle = document.createElement('div');
+        toggle.className = `type-toggle ${key === currentEssayType ? 'active' : ''} ${!available ? 'disabled' : ''}`;
+        toggle.dataset.type = key;
+        
+        toggle.innerHTML = `
+          <div class="type-toggle-name">${type.name}</div>
+          <div class="type-toggle-level">${type.levels.join(', ').toUpperCase()}</div>
+          ${type.comingSoon ? '<div class="coming-soon-badge">SOON</div>' : ''}
+        `;
+        
+        if (available && type.active) {
+          toggle.addEventListener('click', () => selectEssayType(key));
+        }
+        
+        essayTypeToggles.appendChild(toggle);
       });
-    });
+    }
 
-    // Paragraph Type Selection
-    typeOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        const type = option.dataset.type;
-        if (type === currentParagraphType) return;
-        
-        typeOptions.forEach(o => o.classList.remove('active'));
-        option.classList.add('active');
-        
-        switchParagraphType(type);
+    // Select Essay Type
+    function selectEssayType(type) {
+      if (!essayTypes[type].active) {
+        showNotification('⏳ Coming soon!');
+        return;
+      }
+      
+      currentEssayType = type;
+      currentParagraphType = null;
+      currentStepIndex = 0;
+      
+      // Initialize essay data
+      const paragraphs = essayTypes[type].paragraphs;
+      essayData = {};
+      paragraphs.forEach(p => {
+        essayData[p] = ['', '', '', ''];
       });
-    });
+      
+      renderEssayTypeToggles();
+      renderParagraphTypes();
+      
+      stepsContainer.innerHTML = `
+        <div style="text-align:center; padding:60px 20px; color:var(--muted);">
+          <div style="font-size:3rem; margin-bottom:20px;">👈</div>
+          <div style="font-size:1.2rem; margin-bottom:10px;">Select a paragraph to begin writing</div>
+          <div style="font-size:0.9rem;">Start with the introduction</div>
+        </div>
+      `;
+      
+      showNotification(`Essay type: ${essayTypes[type].name}`);
+    }
+
+    // Render Paragraph Types
+    function renderParagraphTypes() {
+      if (!currentEssayType || !essayTypes[currentEssayType].active) {
+        paragraphTypesList.innerHTML = '';
+        return;
+      }
+      
+      const paragraphs = essayTypes[currentEssayType].paragraphs;
+      paragraphTypesList.innerHTML = '';
+      
+      const icons = {
+        introduction: '🎯',
+        body1: '💡',
+        body2: '💡',
+        body3: '💡',
+        conclusion: '✅'
+      };
+      
+      const labels = {
+        introduction: 'Introduction',
+        body1: 'Body Para 1',
+        body2: 'Body Para 2',
+        body3: 'Body Para 3',
+        conclusion: 'Conclusion'
+      };
+      
+      paragraphs.forEach(p => {
+        const option = document.createElement('div');
+        option.className = `type-option ${p === currentParagraphType ? 'active' : ''}`;
+        option.dataset.type = p;
+        option.innerHTML = `
+          <div class="type-icon">${icons[p]}</div>
+          <div class="type-label">${labels[p]}</div>
+          <div class="check-icon">✓</div>
+        `;
+        option.addEventListener('click', () => switchParagraphType(p));
+        paragraphTypesList.appendChild(option);
+      });
+    }
 
     // Switch Paragraph Type
     function switchParagraphType(type) {
@@ -1045,17 +1141,17 @@
       currentStepIndex = 0;
       completionScreen.classList.remove('active');
       
-      // Update title
       const structureKey = type === 'introduction' || type === 'conclusion' ? type : 'body';
-      const structure = paragraphStructures[structureKey];
+      const structure = essayTypes[currentEssayType].structure[structureKey];
       
       if (type.startsWith('body')) {
         const bodyNum = type.replace('body', '');
         paraTitle.textContent = `Body Paragraph ${bodyNum}`;
       } else {
-        paraTitle.textContent = structure.title;
+        paraTitle.textContent = structure.title + ' Paragraph';
       }
       
+      renderParagraphTypes();
       renderCurrentStep();
     }
 
@@ -1064,7 +1160,7 @@
       const structureKey = currentParagraphType === 'introduction' || currentParagraphType === 'conclusion' 
         ? currentParagraphType 
         : 'body';
-      const structure = paragraphStructures[structureKey];
+      const structure = essayTypes[currentEssayType].structure[structureKey];
       const step = structure.steps[currentStepIndex];
       
       if (!step) {
@@ -1083,7 +1179,7 @@
           
           ${step.expressions.length > 0 ? `
             <div class="expressions-box">
-              <div class="expressions-label">💡 Suggested Expressions (Click to insert)</div>
+              <div class="expressions-label">💡 Click to Insert</div>
               <div class="expression-chips">
                 ${step.expressions.map(expr => `
                   <div class="expression-chip" onclick="insertExpression('${expr}')">${expr}</div>
@@ -1112,12 +1208,11 @@
             <button class="next-step-btn" id="nextStepBtn">
               ${currentStepIndex === structure.steps.length - 1 ? 'Complete Paragraph ✓' : 'Next Step →'}
             </button>
-            <button class="skip-btn" id="skipBtn">Skip this step</button>
+            <button class="skip-btn" id="skipBtn">Skip</button>
           </div>
         </div>
       `;
       
-      // Add event listeners
       const stepInput = document.getElementById('stepInput');
       const charCount = document.getElementById('charCount');
       const nextStepBtn = document.getElementById('nextStepBtn');
@@ -1139,7 +1234,6 @@
         renderCurrentStep();
       });
       
-      // Initialize char count
       charCount.textContent = stepInput.value.length;
     }
 
@@ -1147,16 +1241,13 @@
     function insertExpression(expr) {
       const stepInput = document.getElementById('stepInput');
       const start = stepInput.selectionStart;
-      const end = stepInput.selectionEnd;
       const text = stepInput.value;
       
       let insertText = expr;
-      if (text && !text.endsWith(' ') && !text.endsWith('\n')) {
-        insertText = ' ' + expr;
-      }
+      if (text && !text.endsWith(' ')) insertText = ' ' + expr;
       insertText += ' ';
       
-      stepInput.value = text.substring(0, start) + insertText + text.substring(end);
+      stepInput.value = text.substring(0, start) + insertText + text.substring(start);
       stepInput.focus();
       stepInput.selectionStart = stepInput.selectionEnd = start + insertText.length;
       
@@ -1170,28 +1261,38 @@
     function showCompletion() {
       stepsContainer.innerHTML = '';
       completionScreen.classList.add('active');
-      
-      // Mark as completed
       document.querySelector(`[data-type="${currentParagraphType}"]`).classList.add('completed');
     }
 
+    // Topic Selection
+    topicCards.forEach(card => {
+      card.addEventListener('click', () => {
+        topicCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        currentTopic = card.dataset.topic;
+        showNotification(`Topic: ${card.querySelector('.topic-name').textContent}`);
+      });
+    });
+
     // Next Paragraph
-    nextParaBtn.addEventListener('click', () => {
-      const types = ['introduction', 'body1', 'body2', 'body3', 'conclusion'];
-      const currentIndex = types.indexOf(currentParagraphType);
-      const nextType = types[currentIndex + 1];
+    document.getElementById('nextParaBtn').addEventListener('click', () => {
+      const paragraphs = essayTypes[currentEssayType].paragraphs;
+      const currentIndex = paragraphs.indexOf(currentParagraphType);
+      const nextType = paragraphs[currentIndex + 1];
       
       if (nextType) {
-        document.querySelector(`[data-type="${nextType}"]`).click();
+        switchParagraphType(nextType);
       } else {
         showNotification('🎉 Essay Complete!');
-        openEssayModal();
       }
     });
 
     // View Essay
-    viewFullBtn.addEventListener('click', openEssayModal);
-    viewEssayBtn.addEventListener('click', openEssayModal);
+    document.getElementById('viewFullBtn').addEventListener('click', openEssayModal);
+    document.getElementById('viewEssayBtn').addEventListener('click', openEssayModal);
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('essayModal').classList.remove('active');
+    });
 
     function openEssayModal() {
       const topicName = document.querySelector('.topic-card.active .topic-name').textContent;
@@ -1200,7 +1301,7 @@
       const essayContent = document.getElementById('essayContent');
       essayContent.innerHTML = '';
       
-      const sections = {
+      const labels = {
         introduction: 'Introduction',
         body1: 'Body Paragraph 1',
         body2: 'Body Paragraph 2',
@@ -1208,42 +1309,30 @@
         conclusion: 'Conclusion'
       };
       
-      Object.entries(sections).forEach(([key, label]) => {
-        const content = essayData[key].filter(s => s.trim()).join(' ');
+      Object.entries(essayData).forEach(([key, steps]) => {
+        const content = steps.filter(s => s.trim()).join(' ');
         if (content) {
           essayContent.innerHTML += `
             <div class="essay-paragraph">
-              <div class="essay-paragraph-label">${label}</div>
+              <div class="essay-paragraph-label">${labels[key]}</div>
               ${content}
             </div>
           `;
         }
       });
       
-      essayModal.classList.add('active');
+      document.getElementById('essayModal').classList.add('active');
     }
 
-    closeModal.addEventListener('click', () => {
-      essayModal.classList.remove('active');
-    });
-
-    // Save Essay
-    saveEssayBtn.addEventListener('click', () => {
+    // Save & Copy
+    document.getElementById('saveEssayBtn').addEventListener('click', () => {
       const topicName = document.querySelector('.topic-card.active .topic-name').textContent;
-      let fullEssay = `INTUITY Essay - ${topicName}\nLevel: ${currentLevel.toUpperCase()}\n\n`;
+      let fullEssay = `INTUITY Essay - ${topicName}\nType: ${essayTypes[currentEssayType].name}\nLevel: ${currentLevel.toUpperCase()}\n\n`;
       
-      const sections = {
-        introduction: 'INTRODUCTION',
-        body1: 'BODY PARAGRAPH 1',
-        body2: 'BODY PARAGRAPH 2',
-        body3: 'BODY PARAGRAPH 3',
-        conclusion: 'CONCLUSION'
-      };
-      
-      Object.entries(sections).forEach(([key, label]) => {
-        const content = essayData[key].filter(s => s.trim()).join(' ');
+      Object.entries(essayData).forEach(([key, steps]) => {
+        const content = steps.filter(s => s.trim()).join(' ');
         if (content) {
-          fullEssay += `${label}\n${content}\n\n`;
+          fullEssay += `${key.toUpperCase()}\n${content}\n\n`;
         }
       });
       
@@ -1260,11 +1349,10 @@
       showNotification('✓ Saved!');
     });
 
-    // Copy Essay
-    copyEssayBtn.addEventListener('click', () => {
+    document.getElementById('copyEssayBtn').addEventListener('click', () => {
       const essayText = document.getElementById('essayContent').innerText;
       navigator.clipboard.writeText(essayText);
-      showNotification('✓ Copied to clipboard!');
+      showNotification('✓ Copied!');
     });
 
     // Notification
@@ -1308,8 +1396,11 @@
     document.head.appendChild(style);
 
     // Initialize
-    renderCurrentStep();
-    console.log('🎯 INTUITY Paragraph Scaffolder initialized');
+    renderEssayTypeToggles();
+    selectEssayType('opinion');
+    
+    console.log('🎯 INTUITY Enhanced with Essay Types ready!');
+    console.log('📋 Architecture ready for JSON expansion');
   </script>
 
 </body>
