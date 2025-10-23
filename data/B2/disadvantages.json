@@ -1,1 +1,197 @@
 
+{
+  "level": "B2",
+  "category": "disadvantages",
+  "expressions": [
+    {
+      "id": "dis-001",
+      "expression": "One of the disadvantages of",
+      "context": "___ social media is the spread of misinformation",
+      "fullSentence": "One of the disadvantages of social media is the spread of misinformation.",
+      "usage": "Introducing a key negative point",
+      "variants": [
+        "One drawback of...",
+        "A disadvantage of...",
+        "One problem with..."
+      ],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "One of the disadvantages of remote work is reduced team collaboration.",
+        "One of the disadvantages of urbanization is increased pollution."
+      ]
+    },
+    {
+      "id": "dis-002",
+      "expression": "One of the arguments against",
+      "context": "___ nuclear energy is the issue of radioactive waste",
+      "fullSentence": "One of the arguments against nuclear energy is the issue of radioactive waste.",
+      "usage": "Presenting opposing viewpoints",
+      "variants": [
+        "The main argument against...",
+        "A key objection to...",
+        "Critics argue that..."
+      ],
+      "level": "C1",
+      "formality": "very formal",
+      "tone": "objective",
+      "examples": [
+        "One of the arguments against standardized testing is that it narrows curriculum.",
+        "One of the arguments against globalization is the loss of local culture."
+      ]
+    },
+    {
+      "id": "dis-003",
+      "expression": "One of the problems is",
+      "context": "___ the high cost of implementation",
+      "fullSentence": "One of the problems is the high cost of implementation.",
+      "usage": "Identifying specific difficulties or challenges",
+      "variants": [
+        "A major problem is...",
+        "The main issue is...",
+        "One challenge is..."
+      ],
+      "note": "More direct than 'disadvantage' - suggests something needs fixing",
+      "level": "B2",
+      "formality": "neutral",
+      "examples": [
+        "One of the problems is the lack of qualified personnel.",
+        "One of the problems is insufficient funding for research."
+      ]
+    },
+    {
+      "id": "dis-004",
+      "expression": "can lead to",
+      "context": "Excessive screen time ___ various health problems",
+      "fullSentence": "Excessive screen time can lead to various health problems.",
+      "usage": "Showing negative consequences or outcomes",
+      "pattern": "Subject + can lead to + noun/noun phrase",
+      "synonyms": ["results in", "causes", "brings about", "gives rise to"],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "Poor diet can lead to serious health complications.",
+        "Lack of exercise can lead to obesity and heart disease."
+      ]
+    },
+    {
+      "id": "dis-005",
+      "expression": "prevents",
+      "context": "Strict regulations ___ companies from innovating quickly",
+      "fullSentence": "Strict regulations prevent companies from innovating quickly.",
+      "usage": "Showing how something stops or blocks progress",
+      "pattern": "Subject + prevents + object + from + verb-ing",
+      "synonyms": ["hinders", "discourages", "restricts", "limits", "impedes"],
+      "opposite": "enables, encourages, facilitates, promotes",
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "Bureaucracy prevents organizations from adapting swiftly.",
+        "Fear of failure prevents many people from taking risks."
+      ]
+    },
+    {
+      "id": "dis-006",
+      "expression": "One criticism about",
+      "context": "___ standardized testing is that it doesn't measure creativity",
+      "fullSentence": "One criticism about standardized testing is that it doesn't measure creativity.",
+      "usage": "Presenting critical viewpoints",
+      "variants": [
+        "A common criticism...",
+        "A major critique...",
+        "One objection..."
+      ],
+      "tone": "More analytical than 'problem' or 'disadvantage'",
+      "level": "C1",
+      "formality": "academic",
+      "examples": [
+        "One criticism about modern education is its focus on memorization.",
+        "One criticism about capitalism is income inequality."
+      ]
+    },
+    {
+      "id": "dis-007",
+      "expression": "results in",
+      "context": "Fast fashion ___ massive environmental pollution",
+      "fullSentence": "Fast fashion results in massive environmental pollution.",
+      "usage": "Showing direct negative consequences",
+      "pattern": "Subject + results in + noun/noun phrase",
+      "synonyms": ["leads to", "causes", "brings about", "produces"],
+      "level": "B2+",
+      "formality": "formal",
+      "examples": [
+        "Deforestation results in loss of biodiversity.",
+        "Poor planning results in project delays and cost overruns."
+      ]
+    },
+    {
+      "id": "dis-008",
+      "expression": "One negative aspect of",
+      "context": "___ artificial intelligence is potential job displacement",
+      "fullSentence": "One negative aspect of artificial intelligence is potential job displacement.",
+      "usage": "More neutral than 'problem' - good for balanced tone",
+      "opposite": "One positive aspect of...",
+      "variants": [
+        "A negative feature...",
+        "An adverse aspect...",
+        "A concerning element..."
+      ],
+      "level": "B2-C1",
+      "formality": "formal",
+      "examples": [
+        "One negative aspect of tourism is environmental degradation.",
+        "One negative aspect of social media is privacy concerns."
+      ]
+    },
+    {
+      "id": "dis-009",
+      "expression": "discourages",
+      "context": "Bureaucracy ___ people from starting their own businesses",
+      "fullSentence": "Bureaucracy discourages people from starting their own businesses.",
+      "usage": "Shows how something reduces motivation or willingness",
+      "pattern": "Subject + discourages + object + from + verb-ing",
+      "opposite": "encourages, motivates, inspires, promotes",
+      "synonyms": ["deters", "dissuades", "puts off", "demotivates"],
+      "level": "B2",
+      "formality": "formal",
+      "examples": [
+        "High taxes discourage foreign investment.",
+        "Negative feedback discourages students from participating."
+      ]
+    },
+    {
+      "id": "dis-010",
+      "expression": "A drawback of",
+      "context": "___ working from home is social isolation",
+      "fullSentence": "A drawback of working from home is social isolation.",
+      "usage": "Academic essays - more formal than 'downside'",
+      "variants": [
+        "One drawback is...",
+        "The main drawback...",
+        "A significant drawback..."
+      ],
+      "opposite": "A benefit of...",
+      "level": "B2-C1",
+      "formality": "formal",
+      "examples": [
+        "A drawback of electric vehicles is limited charging infrastructure.",
+        "A drawback of online learning is reduced personal interaction."
+      ]
+    },
+    {
+      "id": "dis-011",
+      "expression": "hinders",
+      "context": "Traffic congestion ___ economic development in major cities",
+      "fullSentence": "Traffic congestion hinders economic development in major cities.",
+      "usage": "Shows how something blocks or slows progress",
+      "pattern": "Subject + hinders + noun",
+      "synonyms": ["impedes", "obstructs", "hampers", "restricts", "constrains"],
+      "level": "C1",
+      "formality": "very formal",
+      "examples": [
+        "Lack of funding hinders scientific research.",
+        "Political instability hinders foreign investment."
+      ]
+    }
+  ]
+}
