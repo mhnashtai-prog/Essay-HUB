@@ -1,1 +1,217 @@
-
+{
+  "level": "C1-C2",
+  "category": "arguments",
+  "expressions": [
+    {
+      "id": "arg-c1-001",
+      "expression": "The prevailing consensus among scholars is that",
+      "context": "___ education mitigates inequality",
+      "fullSentence": "The prevailing consensus among scholars is that education mitigates long-term inequality.",
+      "usage": "Presenting majority expert opinion",
+      "note": "Prevailing = dominant, widespread, current",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The prevailing consensus among economists is that trade barriers reduce efficiency.",
+        "The prevailing consensus among scientists is that climate change requires urgent action."
+      ]
+    },
+    {
+      "id": "arg-c1-002",
+      "expression": "Proponents contend that",
+      "context": "___ market forces optimize resource allocation",
+      "fullSentence": "Proponents contend that market forces optimize resource allocation more efficiently than central planning.",
+      "usage": "Presenting supporter arguments formally",
+      "note": "Contend = argue, maintain, assert (very formal)",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Proponents contend that technology enhances human capabilities.",
+        "Proponents contend that globalization benefits developing economies."
+      ]
+    },
+    {
+      "id": "arg-c1-003",
+      "expression": "Critics maintain that",
+      "context": "___ current policies prove inadequate",
+      "fullSentence": "Critics maintain that current policies prove inadequate to address systemic problems.",
+      "usage": "Presenting sustained criticism",
+      "note": "Maintain = assert persistently, hold a position",
+      "synonyms": ["assert", "contend", "argue", "posit"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "Critics maintain that inequality undermines democracy.",
+        "Critics maintain that market solutions cannot address climate change."
+      ]
+    },
+    {
+      "id": "arg-c1-004",
+      "expression": "A compelling case can be made that",
+      "context": "___ prevention outweighs intervention",
+      "fullSentence": "A compelling case can be made that prevention outweighs intervention in public health.",
+      "usage": "Introducing strong, persuasive arguments",
+      "note": "Compelling = persuasive, convincing, forceful",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "A compelling case can be made that education transforms societies.",
+        "A compelling case can be made that transparency enhances governance."
+      ]
+    },
+    {
+      "id": "arg-c1-005",
+      "expression": "The theoretical underpinning of",
+      "context": "___ this approach derives from behavioral economics",
+      "fullSentence": "The theoretical underpinning of this approach derives from behavioral economics.",
+      "usage": "Explaining conceptual foundation",
+      "note": "Underpinning = foundation, basis, support",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The theoretical underpinning of democracy is popular sovereignty.",
+        "The theoretical underpinning of capitalism is rational self-interest."
+      ]
+    },
+    {
+      "id": "arg-c1-006",
+      "expression": "Skeptics posit that",
+      "context": "___ technological solutions cannot address systemic issues",
+      "fullSentence": "Skeptics posit that technological solutions cannot address fundamentally systemic issues.",
+      "usage": "Presenting doubts or alternative viewpoints",
+      "note": "Posit = put forward as fact, assert, propose",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Skeptics posit that growth-based models are unsustainable.",
+        "Skeptics posit that markets cannot self-regulate effectively."
+      ]
+    },
+    {
+      "id": "arg-c1-007",
+      "expression": "The crux of the matter is",
+      "context": "___ whether reform proves politically feasible",
+      "fullSentence": "The crux of the matter is whether reform proves politically feasible in current circumstances.",
+      "usage": "Identifying the central, decisive point",
+      "note": "Crux = central point, heart of the matter, essence",
+      "level": "C2",
+      "formality": "formal",
+      "examples": [
+        "The crux of the matter is resource allocation.",
+        "The crux of the matter is political will."
+      ]
+    },
+    {
+      "id": "arg-c1-008",
+      "expression": "A cogent argument can be advanced that",
+      "context": "___ markets require regulatory oversight",
+      "fullSentence": "A cogent argument can be advanced that markets require robust regulatory oversight.",
+      "usage": "Presenting logically strong arguments",
+      "note": "Cogent = clear, logical, convincing",
+      "synonyms": ["compelling", "persuasive", "convincing", "forceful"],
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "A cogent argument can be advanced that education reduces crime.",
+        "A cogent argument can be advanced that transparency enhances trust."
+      ]
+    },
+    {
+      "id": "arg-c1-009",
+      "expression": "The empirical literature substantiates",
+      "context": "___ the correlation between education and mobility",
+      "fullSentence": "The empirical literature substantiates the correlation between education and social mobility.",
+      "usage": "Citing research evidence",
+      "note": "Substantiates = supports with evidence, validates, confirms",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The empirical literature substantiates the effectiveness of early intervention.",
+        "The empirical literature substantiates the link between inequality and instability."
+      ]
+    },
+    {
+      "id": "arg-c1-010",
+      "expression": "There exists considerable debate regarding",
+      "context": "___ optimal policy approaches",
+      "fullSentence": "There exists considerable debate regarding optimal policy approaches to climate mitigation.",
+      "usage": "Introducing contested topics formally",
+      "level": "C1-C2",
+      "formality": "very formal",
+      "examples": [
+        "There exists considerable debate regarding the role of markets.",
+        "There exists considerable debate regarding educational reform."
+      ]
+    },
+    {
+      "id": "arg-c1-011",
+      "expression": "The normative implications of",
+      "context": "___ this approach warrant scrutiny",
+      "fullSentence": "The normative implications of this approach warrant careful scrutiny.",
+      "usage": "Discussing ethical or value-based aspects",
+      "note": "Normative = relating to values, standards, ethics",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The normative implications of AI require ethical frameworks.",
+        "The normative implications of inequality demand attention."
+      ]
+    },
+    {
+      "id": "arg-c1-012",
+      "expression": "Orthodox perspectives hold that",
+      "context": "___ markets self-regulate efficiently",
+      "fullSentence": "Orthodox perspectives hold that markets self-regulate efficiently without intervention.",
+      "usage": "Presenting conventional or traditional views",
+      "note": "Orthodox = conventional, traditional, established",
+      "opposite": "Heterodox perspectives...",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Orthodox perspectives hold that competition drives innovation.",
+        "Orthodox perspectives hold that incentives shape behavior."
+      ]
+    },
+    {
+      "id": "arg-c1-013",
+      "expression": "A nuanced analysis reveals that",
+      "context": "___ reality proves more complex",
+      "fullSentence": "A nuanced analysis reveals that reality proves considerably more complex than simple models suggest.",
+      "usage": "Introducing sophisticated, detailed examination",
+      "note": "Nuanced = subtle, detailed, sophisticated",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "A nuanced analysis reveals that outcomes depend on context.",
+        "A nuanced analysis reveals that trade-offs are inevitable."
+      ]
+    },
+    {
+      "id": "arg-c1-014",
+      "expression": "The fundamental tension between",
+      "context": "___ efficiency and equity persists",
+      "fullSentence": "The fundamental tension between efficiency and equity persists across policy domains.",
+      "usage": "Identifying core conflicts or dilemmas",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The fundamental tension between freedom and security shapes debate.",
+        "The fundamental tension between growth and sustainability remains unresolved."
+      ]
+    },
+    {
+      "id": "arg-c1-015",
+      "expression": "The preponderance of evidence suggests",
+      "context": "___ that early intervention yields returns",
+      "fullSentence": "The preponderance of evidence suggests that early intervention yields substantial returns.",
+      "usage": "Presenting weight of evidence",
+      "note": "Preponderance = majority, bulk, greater part",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The preponderance of evidence suggests that education reduces poverty.",
+        "The preponderance of evidence suggests that prevention outweighs treatment."
+      ]
+    }
+  ]
+}
