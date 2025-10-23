@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTUITY – Paragraph Scaffolder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --beige: #C9A961;
+      --beige-dim: rgba(201, 169, 97, 0.15);
+      --beige-border: rgba(201, 169, 97, 0.25);
+      --green: #4CAF50;
+      --blue: #4a90e2;
+      --red: #b94e48;
+      --panel: rgba(28, 28, 30, 0.85);
+      --text: #e5e5e7;
+      --muted: #8e8e93;
+      --border: rgba(255, 255, 255, 0.06);
+    }
+
+    body {
+      background: #0a0a0a;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 1000;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: radial-gradient(circle at 30% 30%, rgba(201, 169, 97, 0.2), transparent);
+      border: 1px solid var(--beige-border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--beige);
+    }
+
+    .brand-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--beige);
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .level-toggle {
+      display: flex;
+      gap: 8px;
+      background: var(--panel);
+      padding: 4px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .level-btn {
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .level-btn.active {
+      background: var(--beige);
+      color: #0a0a0a;
+    }
+
+    .progress-indicator {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .streak {
+      color: var(--beige);
+      font-weight: 600;
+    }
+
+    /* Main Layout */
+    .main-container {
+      margin-top: 56px;
+      padding: 24px;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Topic Selector */
+    .topic-selector {
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .topic-header {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      color: var(--beige);
+      margin-bottom: 16px;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .topic-card {
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .topic-card:hover {
+      border-color: var(--beige-border);
+      background: var(--beige-dim);
+      transform: translateY(-2px);
+    }
+
+    .topic-card.active {
+      border-color: var(--beige);
+      background: var(--beige-dim);
+    }
+
+    .topic-icon {
+      font-size: 2rem;
+    }
+
+    .topic-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Paragraph Builder */
+    .builder-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+
+    /* Left: Paragraph Type Selector */
+    .paragraph-types {
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+
+    .types-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      color: var(--beige);
+      margin-bottom: 16px;
+    }
+
+    .type-option {
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .type-option:hover {
+      border-color: var(--beige-border);
+      background: var(--beige-dim);
+    }
+
+    .type-option.active {
+      border-color: var(--beige);
+      background: var(--beige-dim);
+    }
+
+    .type-option.completed {
+      border-color: var(--green);
+      background: rgba(76, 175, 80, 0.1);
+    }
+
+    .type-icon {
+      font-size: 1.3rem;
+    }
+
+    .type-label {
+      flex: 1;
+      font-weight: 500;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .check-icon {
+      color: var(--green);
+      font-size: 1.2rem;
+      opacity: 0;
+    }
+
+    .type-option.completed .check-icon {
+      opacity: 1;
+    }
+
+    /* Right: Scaffolder */
+    .scaffolder {
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .scaffolder-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .para-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      color: var(--beige);
+    }
+
+    .view-full-btn {
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid var(--beige-border);
+      border-radius: 8px;
+      color: var(--beige);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .view-full-btn:hover {
+      background: var(--beige);
+      color: #0a0a0a;
+    }
+
+    /* Steps */
+    .step-container {
+      margin-bottom: 32px;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--beige-dim);
+      border: 2px solid var(--beige);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--beige);
+      font-size: 0.9rem;
+    }
+
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .step-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-left: 44px;
+      margin-bottom: 12px;
+    }
+
+    /* Expression Suggestions */
+    .expressions-box {
+      background: rgba(201, 169, 97, 0.05);
+      border: 1px solid var(--beige-border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      margin-left: 44px;
+    }
+
+    .expressions-label {
+      font-size: 0.8rem;
+      color: var(--beige);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .expression-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .expression-chip {
+      padding: 8px 14px;
+      background: rgba(10, 10, 10, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .expression-chip:hover {
+      background: var(--beige);
+      color: #0a0a0a;
+      transform: scale(1.05);
+    }
+
+    .expression-chip:active {
+      transform: scale(0.98);
+    }
+
+    /* Writing Area */
+    .writing-area {
+      margin-left: 44px;
+      position: relative;
+    }
+
+    .step-textarea {
+      width: 100%;
+      min-height: 120px;
+      background: rgba(10, 10, 10, 0.8);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+      font-family: 'DM Sans', sans-serif;
+      resize: vertical;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .step-textarea:focus {
+      border-color: var(--beige);
+      box-shadow: 0 0 0 3px var(--beige-dim);
+    }
+
+    .step-textarea::placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .char-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: rgba(10, 10, 10, 0.9);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    /* Cambridge Criteria Indicator */
+    .criteria-hint {
+      margin-left: 44px;
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: rgba(74, 144, 226, 0.1);
+      border-left: 3px solid var(--blue);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: var(--blue);
+    }
+
+    /* Step Actions */
+    .step-actions {
+      display: flex;
+      gap: 12px;
+      margin-left: 44px;
+      margin-top: 16px;
+    }
+
+    .next-step-btn {
+      padding: 10px 24px;
+      background: var(--beige);
+      color: #0a0a0a;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .next-step-btn:hover {
+      background: #b39554;
+      transform: translateY(-1px);
+    }
+
+    .next-step-btn:disabled {
+      background: var(--muted);
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .skip-btn {
+      padding: 10px 24px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .skip-btn:hover {
+      border-color: var(--beige-border);
+      color: var(--beige);
+    }
+
+    /* Completion Screen */
+    .completion-screen {
+      display: none;
+      text-align: center;
+      padding: 60px 40px;
+    }
+
+    .completion-screen.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .completion-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .completion-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      color: var(--beige);
+      margin-bottom: 12px;
+    }
+
+    .completion-text {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .completion-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .action-button {
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+
+    .primary-action {
+      background: var(--beige);
+      color: #0a0a0a;
+      border: none;
+    }
+
+    .primary-action:hover {
+      background: #b39554;
+    }
+
+    .secondary-action {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .secondary-action:hover {
+      border-color: var(--beige);
+      color: var(--beige);
+    }
+
+    /* Full Essay Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 40px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: var(--beige);
+      color: #0a0a0a;
+    }
+
+    .essay-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      color: var(--beige);
+      margin-bottom: 24px;
+    }
+
+    .essay-paragraph {
+      background: rgba(10, 10, 10, 0.6);
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid var(--beige);
+      margin-bottom: 24px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .essay-paragraph-label {
+      font-size: 0.8rem;
+      color: var(--beige);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .essay-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .builder-container {
+        grid-template-columns: 1fr;
+      }
+
+      .paragraph-types {
+        position: static;
+      }
+
+      .topic-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <div class="logo">IN</div>
+      <div>
+        <div class="brand-text">INTUITY</div>
+        <div class="subtitle">Paragraph Scaffolder</div>
+      </div>
+    </div>
+
+    <div class="level-toggle">
+      <button class="level-btn active" data-level="b2">B2</button>
+      <button class="level-btn" data-level="c1">C1</button>
+      <button class="level-btn" data-level="c2">C2</button>
+    </div>
+
+    <div class="progress-indicator">
+      <span>Today: <span class="streak">3</span></span>
+      <span>•</span>
+      <span>Streak: <span class="streak">🔥 7</span></span>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <!-- Topic Selector -->
+    <div class="topic-selector">
+      <div class="topic-header">Choose Your Topic</div>
+      <div class="topic-grid">
+        <div class="topic-card active" data-topic="social-media">
+          <div class="topic-icon">📱</div>
+          <div class="topic-name">Social Media</div>
+        </div>
+        <div class="topic-card" data-topic="environment">
+          <div class="topic-icon">🌍</div>
+          <div class="topic-name">Environment</div>
+        </div>
+        <div class="topic-card" data-topic="technology">
+          <div class="topic-icon">💻</div>
+          <div class="topic-name">Technology</div>
+        </div>
+        <div class="topic-card" data-topic="education">
+          <div class="topic-icon">🎓</div>
+          <div class="topic-name">Education</div>
+        </div>
+        <div class="topic-card" data-topic="work">
+          <div class="topic-icon">💼</div>
+          <div class="topic-name">Work Life</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Builder Container -->
+    <div class="builder-container">
+      
+      <!-- Left: Paragraph Types -->
+      <div class="paragraph-types">
+        <div class="types-title">Essay Structure</div>
+        
+        <div class="type-option active" data-type="introduction">
+          <div class="type-icon">🎯</div>
+          <div class="type-label">Introduction</div>
+          <div class="check-icon">✓</div>
+        </div>
+
+        <div class="type-option" data-type="body1">
+          <div class="type-icon">💡</div>
+          <div class="type-label">Body Para 1</div>
+          <div class="check-icon">✓</div>
+        </div>
+
+        <div class="type-option" data-type="body2">
+          <div class="type-icon">💡</div>
+          <div class="type-label">Body Para 2</div>
+          <div class="check-icon">✓</div>
+        </div>
+
+        <div class="type-option" data-type="body3">
+          <div class="type-icon">💡</div>
+          <div class="type-label">Body Para 3</div>
+          <div class="check-icon">✓</div>
+        </div>
+
+        <div class="type-option" data-type="conclusion">
+          <div class="type-icon">✅</div>
+          <div class="type-label">Conclusion</div>
+          <div class="check-icon">✓</div>
+        </div>
+      </div>
+
+      <!-- Right: Scaffolder -->
+      <div class="scaffolder">
+        <div class="scaffolder-header">
+          <div class="para-title" id="paraTitle">Introduction Paragraph</div>
+          <button class="view-full-btn" id="viewFullBtn">View Full Essay</button>
+        </div>
+
+        <div id="stepsContainer">
+          <!-- Steps will be dynamically loaded here -->
+        </div>
+
+        <!-- Completion Screen -->
+        <div class="completion-screen" id="completionScreen">
+          <div class="completion-icon">🎉</div>
+          <div class="completion-title">Paragraph Complete!</div>
+          <div class="completion-text">Great work! Ready to move to the next section?</div>
+          <div class="completion-actions">
+            <button class="action-button primary-action" id="nextParaBtn">Next Paragraph</button>
+            <button class="action-button secondary-action" id="viewEssayBtn">View Full Essay</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Full Essay Modal -->
+  <div class="modal" id="essayModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">×</button>
+      <div class="essay-title" id="essayTopicTitle">Your Essay: Social Media</div>
+      <div id="essayContent">
+        <!-- Essay paragraphs will be displayed here -->
+      </div>
+      <div class="essay-actions">
+        <button class="action-button primary-action" id="saveEssayBtn">💾 Save Essay</button>
+        <button class="action-button secondary-action" id="copyEssayBtn">📋 Copy to Clipboard</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data structure for paragraph steps
+    const paragraphStructures = {
+      introduction: {
+        title: 'Introduction Paragraph',
+        steps: [
+          {
+            number: 1,
+            title: 'Opening Statement',
+            subtitle: 'Hook the reader with a general statement about the topic',
+            expressions: [
+              'In today\'s society,',
+              'In recent years,',
+              'Nowadays,',
+              'In an era characterised by',
+              'It is often said that'
+            ],
+            placeholder: 'Start with a broad statement about your topic...',
+            criteria: 'Cambridge: Content - Introduce the topic clearly'
+          },
+          {
+            number: 2,
+            title: 'Context & Background',
+            subtitle: 'Add more details about why this topic is important or relevant',
+            expressions: [],
+            placeholder: 'Explain why this topic matters or give some background information...',
+            criteria: 'Cambridge: Communicative Achievement - Develop the context'
+          },
+          {
+            number: 3,
+            title: 'Present Different Views',
+            subtitle: 'Show that there are different perspectives on this issue',
+            expressions: [
+              'While some argue that',
+              'On the one hand... On the other hand',
+              'Although many believe that',
+              'There is ongoing debate about',
+              'Opinions are divided on'
+            ],
+            placeholder: 'Mention different viewpoints on this topic...',
+            criteria: 'Cambridge: Organization - Show awareness of different perspectives'
+          },
+          {
+            number: 4,
+            title: 'Your Thesis Statement',
+            subtitle: 'Clearly state YOUR position or main argument',
+            expressions: [
+              'From my perspective,',
+              'In my view,',
+              'I believe that',
+              'It is my contention that',
+              'This essay will argue that'
+            ],
+            placeholder: 'State your main position clearly...',
+            criteria: 'Cambridge: Content - Clear thesis statement'
+          }
+        ]
+      },
+      body: {
+        title: 'Body Paragraph',
+        steps: [
+          {
+            number: 1,
+            title: 'Topic Sentence (Main Claim)',
+            subtitle: 'State the main idea of this paragraph',
+            expressions: [
+              'One of the key advantages of',
+              'One of the disadvantages of',
+              'The main argument in favour of',
+              'A significant drawback of',
+              'One positive aspect of'
+            ],
+            placeholder: 'What is the main point of this paragraph?',
+            criteria: 'Cambridge: Organization - Clear topic sentence'
+          },
+          {
+            number: 2,
+            title: 'Explain Your Claim',
+            subtitle: 'Develop the idea - explain WHY or HOW',
+            expressions: [
+              'This is because',
+              'The reason for this is that',
+              'In other words,',
+              'What this means is that',
+              'This can be attributed to'
+            ],
+            placeholder: 'Explain your claim in more detail...',
+            criteria: 'Cambridge: Content - Develop ideas fully'
+          },
+          {
+            number: 3,
+            title: 'Evidence or Example',
+            subtitle: 'Support your claim with concrete evidence or examples',
+            expressions: [
+              'For instance,',
+              'For example,',
+              'This can be seen in',
+              'Research shows that',
+              'Studies have demonstrated that'
+            ],
+            placeholder: 'Give a specific example or evidence...',
+            criteria: 'Cambridge: Language - Use appropriate examples'
+          },
+          {
+            number: 4,
+            title: 'Link or Conclude',
+            subtitle: 'Link to next idea OR conclude the paragraph (optional)',
+            expressions: [
+              'Furthermore,',
+              'Moreover,',
+              'Consequently,',
+              'As a result,',
+              'Therefore,'
+            ],
+            placeholder: 'Connect to the next point or wrap up this paragraph...',
+            criteria: 'Cambridge: Communicative Achievement - Cohesion'
+          }
+        ]
+      },
+      conclusion: {
+        title: 'Conclusion Paragraph',
+        steps: [
+          {
+            number: 1,
+            title: 'Signal Conclusion',
+            subtitle: 'Let the reader know you are concluding',
+            expressions: [
+              'In conclusion,',
+              'Taking everything into account,',
+              'Weighing up both sides,',
+              'To sum up,',
+              'On balance,'
+            ],
+            placeholder: 'Start your conclusion...',
+            criteria: 'Cambridge: Organization - Clear conclusion marker'
+          },
+          {
+            number: 2,
+            title: 'Summarize Main Points',
+            subtitle: 'Briefly recap your key arguments (don\'t repeat exactly)',
+            expressions: [],
+            placeholder: 'Summarize your main points...',
+            criteria: 'Cambridge: Content - Summarize key points'
+          },
+          {
+            number: 3,
+            title: 'Restate Your Position',
+            subtitle: 'Clearly restate your opinion or thesis',
+            expressions: [
+              'From my perspective,',
+              'It is my belief that',
+              'I firmly believe that',
+              'In my view,',
+              'I would argue that'
+            ],
+            placeholder: 'Restate your position clearly...',
+            criteria: 'Cambridge: Content - Clear final position'
+          },
+          {
+            number: 4,
+            title: 'Final Thought (Optional)',
+            subtitle: 'End with a broader implication or future outlook',
+            expressions: [
+              'Looking ahead,',
+              'In the future,',
+              'Ultimately,',
+              'It is essential that',
+              'Moving forward,'
+            ],
+            placeholder: 'End with a final thought or recommendation...',
+            criteria: 'Cambridge: Communicative Achievement - Strong ending'
+          }
+        ]
+      }
+    };
+
+    // State
+    let currentLevel = 'b2';
+    let currentTopic = 'social-media';
+    let currentParagraphType = 'introduction';
+    let currentStepIndex = 0;
+    let essayData = {
+      introduction: ['', '', '', ''],
+      body1: ['', '', '', ''],
+      body2: ['', '', '', ''],
+      body3: ['', '', '', ''],
+      conclusion: ['', '', '', '']
+    };
+
+    // DOM Elements
+    const levelBtns = document.querySelectorAll('.level-btn');
+    const topicCards = document.querySelectorAll('.topic-card');
+    const typeOptions = document.querySelectorAll('.type-option');
+    const stepsContainer = document.getElementById('stepsContainer');
+    const completionScreen = document.getElementById('completionScreen');
+    const paraTitle = document.getElementById('paraTitle');
+    const viewFullBtn = document.getElementById('viewFullBtn');
+    const nextParaBtn = document.getElementById('nextParaBtn');
+    const viewEssayBtn = document.getElementById('viewEssayBtn');
+    const essayModal = document.getElementById('essayModal');
+    const closeModal = document.getElementById('closeModal');
+    const saveEssayBtn = document.getElementById('saveEssayBtn');
+    const copyEssayBtn = document.getElementById('copyEssayBtn');
+
+    // Level Toggle
+    levelBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        levelBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLevel = btn.dataset.level;
+        showNotification(`Level: ${btn.textContent}`);
+      });
+    });
+
+    // Topic Selection
+    topicCards.forEach(card => {
+      card.addEventListener('click', () => {
+        topicCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        currentTopic = card.dataset.topic;
+        showNotification(`Topic: ${card.querySelector('.topic-name').textContent}`);
+      });
+    });
+
+    // Paragraph Type Selection
+    typeOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const type = option.dataset.type;
+        if (type === currentParagraphType) return;
+        
+        typeOptions.forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        
+        switchParagraphType(type);
+      });
+    });
+
+    // Switch Paragraph Type
+    function switchParagraphType(type) {
+      currentParagraphType = type;
+      currentStepIndex = 0;
+      completionScreen.classList.remove('active');
+      
+      // Update title
+      const structureKey = type === 'introduction' || type === 'conclusion' ? type : 'body';
+      const structure = paragraphStructures[structureKey];
+      
+      if (type.startsWith('body')) {
+        const bodyNum = type.replace('body', '');
+        paraTitle.textContent = `Body Paragraph ${bodyNum}`;
+      } else {
+        paraTitle.textContent = structure.title;
+      }
+      
+      renderCurrentStep();
+    }
+
+    // Render Current Step
+    function renderCurrentStep() {
+      const structureKey = currentParagraphType === 'introduction' || currentParagraphType === 'conclusion' 
+        ? currentParagraphType 
+        : 'body';
+      const structure = paragraphStructures[structureKey];
+      const step = structure.steps[currentStepIndex];
+      
+      if (!step) {
+        showCompletion();
+        return;
+      }
+      
+      stepsContainer.innerHTML = `
+        <div class="step-container">
+          <div class="step-header">
+            <div class="step-number">${step.number}</div>
+            <div class="step-title">${step.title}</div>
+          </div>
+          
+          <div class="step-subtitle">${step.subtitle}</div>
+          
+          ${step.expressions.length > 0 ? `
+            <div class="expressions-box">
+              <div class="expressions-label">💡 Suggested Expressions (Click to insert)</div>
+              <div class="expression-chips">
+                ${step.expressions.map(expr => `
+                  <div class="expression-chip" onclick="insertExpression('${expr}')">${expr}</div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+          
+          <div class="writing-area">
+            <textarea 
+              class="step-textarea" 
+              id="stepInput"
+              placeholder="${step.placeholder}"
+              maxlength="500"
+            >${essayData[currentParagraphType][currentStepIndex] || ''}</textarea>
+            <div class="char-counter">
+              <span id="charCount">0</span>/500
+            </div>
+          </div>
+          
+          <div class="criteria-hint">
+            📋 ${step.criteria}
+          </div>
+          
+          <div class="step-actions">
+            <button class="next-step-btn" id="nextStepBtn">
+              ${currentStepIndex === structure.steps.length - 1 ? 'Complete Paragraph ✓' : 'Next Step →'}
+            </button>
+            <button class="skip-btn" id="skipBtn">Skip this step</button>
+          </div>
+        </div>
+      `;
+      
+      // Add event listeners
+      const stepInput = document.getElementById('stepInput');
+      const charCount = document.getElementById('charCount');
+      const nextStepBtn = document.getElementById('nextStepBtn');
+      const skipBtn = document.getElementById('skipBtn');
+      
+      stepInput.addEventListener('input', () => {
+        charCount.textContent = stepInput.value.length;
+        essayData[currentParagraphType][currentStepIndex] = stepInput.value;
+      });
+      
+      nextStepBtn.addEventListener('click', () => {
+        essayData[currentParagraphType][currentStepIndex] = stepInput.value;
+        currentStepIndex++;
+        renderCurrentStep();
+      });
+      
+      skipBtn.addEventListener('click', () => {
+        currentStepIndex++;
+        renderCurrentStep();
+      });
+      
+      // Initialize char count
+      charCount.textContent = stepInput.value.length;
+    }
+
+    // Insert Expression
+    function insertExpression(expr) {
+      const stepInput = document.getElementById('stepInput');
+      const start = stepInput.selectionStart;
+      const end = stepInput.selectionEnd;
+      const text = stepInput.value;
+      
+      let insertText = expr;
+      if (text && !text.endsWith(' ') && !text.endsWith('\n')) {
+        insertText = ' ' + expr;
+      }
+      insertText += ' ';
+      
+      stepInput.value = text.substring(0, start) + insertText + text.substring(end);
+      stepInput.focus();
+      stepInput.selectionStart = stepInput.selectionEnd = start + insertText.length;
+      
+      essayData[currentParagraphType][currentStepIndex] = stepInput.value;
+      document.getElementById('charCount').textContent = stepInput.value.length;
+      
+      showNotification('✓ Inserted');
+    }
+
+    // Show Completion
+    function showCompletion() {
+      stepsContainer.innerHTML = '';
+      completionScreen.classList.add('active');
+      
+      // Mark as completed
+      document.querySelector(`[data-type="${currentParagraphType}"]`).classList.add('completed');
+    }
+
+    // Next Paragraph
+    nextParaBtn.addEventListener('click', () => {
+      const types = ['introduction', 'body1', 'body2', 'body3', 'conclusion'];
+      const currentIndex = types.indexOf(currentParagraphType);
+      const nextType = types[currentIndex + 1];
+      
+      if (nextType) {
+        document.querySelector(`[data-type="${nextType}"]`).click();
+      } else {
+        showNotification('🎉 Essay Complete!');
+        openEssayModal();
+      }
+    });
+
+    // View Essay
+    viewFullBtn.addEventListener('click', openEssayModal);
+    viewEssayBtn.addEventListener('click', openEssayModal);
+
+    function openEssayModal() {
+      const topicName = document.querySelector('.topic-card.active .topic-name').textContent;
+      document.getElementById('essayTopicTitle').textContent = `Your Essay: ${topicName}`;
+      
+      const essayContent = document.getElementById('essayContent');
+      essayContent.innerHTML = '';
+      
+      const sections = {
+        introduction: 'Introduction',
+        body1: 'Body Paragraph 1',
+        body2: 'Body Paragraph 2',
+        body3: 'Body Paragraph 3',
+        conclusion: 'Conclusion'
+      };
+      
+      Object.entries(sections).forEach(([key, label]) => {
+        const content = essayData[key].filter(s => s.trim()).join(' ');
+        if (content) {
+          essayContent.innerHTML += `
+            <div class="essay-paragraph">
+              <div class="essay-paragraph-label">${label}</div>
+              ${content}
+            </div>
+          `;
+        }
+      });
+      
+      essayModal.classList.add('active');
+    }
+
+    closeModal.addEventListener('click', () => {
+      essayModal.classList.remove('active');
+    });
+
+    // Save Essay
+    saveEssayBtn.addEventListener('click', () => {
+      const topicName = document.querySelector('.topic-card.active .topic-name').textContent;
+      let fullEssay = `INTUITY Essay - ${topicName}\nLevel: ${currentLevel.toUpperCase()}\n\n`;
+      
+      const sections = {
+        introduction: 'INTRODUCTION',
+        body1: 'BODY PARAGRAPH 1',
+        body2: 'BODY PARAGRAPH 2',
+        body3: 'BODY PARAGRAPH 3',
+        conclusion: 'CONCLUSION'
+      };
+      
+      Object.entries(sections).forEach(([key, label]) => {
+        const content = essayData[key].filter(s => s.trim()).join(' ');
+        if (content) {
+          fullEssay += `${label}\n${content}\n\n`;
+        }
+      });
+      
+      const blob = new Blob([fullEssay], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `INTUITY_${topicName}_${currentLevel}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      showNotification('✓ Saved!');
+    });
+
+    // Copy Essay
+    copyEssayBtn.addEventListener('click', () => {
+      const essayText = document.getElementById('essayContent').innerText;
+      navigator.clipboard.writeText(essayText);
+      showNotification('✓ Copied to clipboard!');
+    });
+
+    // Notification
+    function showNotification(message) {
+      const existing = document.querySelector('.notification');
+      if (existing) existing.remove();
+
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 70px;
+        right: 24px;
+        background: rgba(201, 169, 97, 0.95);
+        color: #0a0a0a;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        z-index: 3000;
+        animation: slideIn 0.3s ease, slideOut 0.3s ease 2s forwards;
+        box-shadow: 0 4px 20px rgba(201, 169, 97, 0.3);
+      `;
+      
+      document.body.appendChild(notification);
+      setTimeout(() => notification.remove(), 2500);
+    }
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(400px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(400px); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize
+    renderCurrentStep();
+    console.log('🎯 INTUITY Paragraph Scaffolder initialized');
+  </script>
+
+</body>
+</html>
