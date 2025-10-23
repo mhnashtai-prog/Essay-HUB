@@ -1,1 +1,255 @@
-
+{
+  "level": "C1-C2",
+  "category": "balancing",
+  "expressions": [
+    {
+      "id": "bal-c1-001",
+      "expression": "Notwithstanding the merits of",
+      "context": "___ market mechanisms, regulatory oversight remains essential",
+      "fullSentence": "Notwithstanding the merits of market mechanisms, regulatory oversight remains essential.",
+      "usage": "Formal concession before presenting contrasting view",
+      "note": "Notwithstanding = despite, in spite of (very formal)",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Notwithstanding the benefits of technology, risks warrant attention.",
+        "Notwithstanding the advantages of globalization, inequality persists."
+      ]
+    },
+    {
+      "id": "bal-c1-002",
+      "expression": "While acknowledging the validity of",
+      "context": "___ opposing arguments, one must recognize",
+      "fullSentence": "While acknowledging the validity of opposing arguments, one must recognize the preponderance of evidence.",
+      "usage": "Balanced, academic way to concede before arguing",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "While acknowledging the validity of concerns, benefits outweigh risks.",
+        "While acknowledging the validity of criticism, reform remains necessary."
+      ]
+    },
+    {
+      "id": "bal-c1-003",
+      "expression": "Countervailing considerations suggest that",
+      "context": "___ reality proves more complex",
+      "fullSentence": "Countervailing considerations suggest that reality proves considerably more complex.",
+      "usage": "Introducing offsetting or balancing factors",
+      "note": "Countervailing = offsetting, balancing, opposing",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Countervailing considerations suggest that trade-offs are inevitable.",
+        "Countervailing considerations suggest that simple solutions prove inadequate."
+      ]
+    },
+    {
+      "id": "bal-c1-004",
+      "expression": "The foregoing analysis demonstrates that",
+      "context": "___ multiple factors warrant consideration",
+      "fullSentence": "The foregoing analysis demonstrates that multiple factors warrant careful consideration.",
+      "usage": "Referring back to previous discussion before concluding",
+      "note": "Foregoing = previous, preceding, aforementioned",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "The foregoing analysis demonstrates that context matters significantly.",
+        "The foregoing analysis demonstrates that outcomes depend on implementation."
+      ]
+    },
+    {
+      "id": "bal-c1-005",
+      "expression": "On balance, the evidence suggests",
+      "context": "___ that benefits outweigh costs",
+      "fullSentence": "On balance, the evidence suggests that benefits outweigh costs in most contexts.",
+      "usage": "Weighing all factors to reach measured conclusion",
+      "level": "C1-C2",
+      "formality": "formal",
+      "examples": [
+        "On balance, the evidence suggests that intervention proves cost-effective.",
+        "On balance, the evidence suggests that reform yields net benefits."
+      ]
+    },
+    {
+      "id": "bal-c1-006",
+      "expression": "Having weighed the merits of competing perspectives",
+      "context": "___ one may reasonably conclude",
+      "fullSentence": "Having weighed the merits of competing perspectives, one may reasonably conclude that reform proves necessary.",
+      "usage": "Showing thorough consideration before concluding",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Having weighed the merits of competing perspectives, action appears imperative.",
+        "Having weighed the merits of competing perspectives, trade-offs become evident."
+      ]
+    },
+    {
+      "id": "bal-c1-007",
+      "expression": "The dialectical tension between",
+      "context": "___ efficiency and equity remains unresolved",
+      "fullSentence": "The dialectical tension between efficiency and equity remains fundamentally unresolved.",
+      "usage": "Highlighting ongoing contradictions or conflicts",
+      "note": "Dialectical = involving contradictory forces, philosophical",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The dialectical tension between freedom and security persists.",
+        "The dialectical tension between growth and sustainability shapes policy."
+      ]
+    },
+    {
+      "id": "bal-c1-008",
+      "expression": "Juxtaposing these considerations reveals",
+      "context": "___ inherent trade-offs",
+      "fullSentence": "Juxtaposing these considerations reveals inherent trade-offs that defy simple resolution.",
+      "usage": "Comparing contrasting elements to show complexity",
+      "note": "Juxtaposing = placing side by side for comparison",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Juxtaposing these considerations reveals competing priorities.",
+        "Juxtaposing these considerations reveals contextual dependency."
+      ]
+    },
+    {
+      "id": "bal-c1-009",
+      "expression": "In the final analysis",
+      "context": "___ political will determines outcomes",
+      "fullSentence": "In the final analysis, political will determines whether reform translates into meaningful change.",
+      "usage": "Introducing ultimate, fundamental conclusion",
+      "variants": ["Ultimately", "In essence", "Fundamentally"],
+      "level": "C1",
+      "formality": "formal",
+      "examples": [
+        "In the final analysis, implementation matters more than design.",
+        "In the final analysis, context shapes outcomes decisively."
+      ]
+    },
+    {
+      "id": "bal-c1-010",
+      "expression": "The preponderance of evidence indicates",
+      "context": "___ that benefits exceed costs",
+      "fullSentence": "The preponderance of evidence indicates that benefits exceed costs across diverse contexts.",
+      "usage": "Citing weight of evidence in conclusion",
+      "note": "Preponderance = majority, greater weight, bulk",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The preponderance of evidence indicates that prevention proves cost-effective.",
+        "The preponderance of evidence indicates that education transforms prospects."
+      ]
+    },
+    {
+      "id": "bal-c1-011",
+      "expression": "Synthesizing these perspectives reveals",
+      "context": "___ that reality transcends binary categorization",
+      "fullSentence": "Synthesizing these perspectives reveals that reality transcends binary categorization.",
+      "usage": "Combining different viewpoints to reach higher understanding",
+      "note": "Synthesizing = combining, integrating, merging",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Synthesizing these perspectives reveals nuanced trade-offs.",
+        "Synthesizing these perspectives reveals context-dependent outcomes."
+      ]
+    },
+    {
+      "id": "bal-c1-012",
+      "expression": "The normative implications warrant",
+      "context": "___ careful ethical scrutiny",
+      "fullSentence": "The normative implications warrant careful ethical scrutiny before implementation proceeds.",
+      "usage": "Emphasizing value judgments and ethical considerations",
+      "note": "Normative = relating to values, standards, what should be",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The normative implications warrant democratic deliberation.",
+        "The normative implications warrant stakeholder consultation."
+      ]
+    },
+    {
+      "id": "bal-c1-013",
+      "expression": "Reconciling these competing priorities requires",
+      "context": "___ contextually sensitive approaches",
+      "fullSentence": "Reconciling these competing priorities requires contextually sensitive approaches rather than universal prescriptions.",
+      "usage": "Acknowledging need to balance conflicting goals",
+      "note": "Reconciling = bringing into harmony, resolving conflicts",
+      "level": "C2",
+      "formality": "formal",
+      "examples": [
+        "Reconciling these competing priorities requires political compromise.",
+        "Reconciling these competing priorities requires adaptive governance."
+      ]
+    },
+    {
+      "id": "bal-c1-014",
+      "expression": "The empirical record substantiates",
+      "context": "___ the primacy of institutional quality",
+      "fullSentence": "The empirical record substantiates the primacy of institutional quality over simple resource endowments.",
+      "usage": "Citing evidence to support conclusions",
+      "note": "Substantiates = supports with evidence, validates",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "The empirical record substantiates the importance of context.",
+        "The empirical record substantiates the role of incentives."
+      ]
+    },
+    {
+      "id": "bal-c1-015",
+      "expression": "Interrogating conventional wisdom reveals",
+      "context": "___ that simplistic narratives prove inadequate",
+      "fullSentence": "Interrogating conventional wisdom reveals that simplistic narratives prove inadequate to capture complex realities.",
+      "usage": "Challenging accepted views to reach deeper understanding",
+      "note": "Interrogating = questioning closely, examining critically",
+      "level": "C2",
+      "formality": "academic",
+      "examples": [
+        "Interrogating conventional wisdom reveals hidden assumptions.",
+        "Interrogating conventional wisdom reveals contextual dependencies."
+      ]
+    },
+    {
+      "id": "bal-c1-016",
+      "expression": "Insofar as",
+      "context": "___ evidence permits generalization, patterns emerge",
+      "fullSentence": "Insofar as evidence permits generalization, consistent patterns emerge across diverse contexts.",
+      "usage": "Qualifying conclusions with appropriate caution",
+      "note": "Insofar as = to the extent that, in so far as",
+      "level": "C2",
+      "formality": "very formal",
+      "examples": [
+        "Insofar as data allows inference, benefits appear to exceed costs.",
+        "Insofar as research indicates, early intervention proves effective."
+      ]
+    },
+    {
+      "id": "bal-c1-017",
+      "expression": "The trajectory of reform hinges upon",
+      "context": "___ sustained political commitment",
+      "fullSentence": "The trajectory of reform hinges upon sustained political commitment and institutional capacity.",
+      "usage": "Identifying critical factors determining outcomes",
+      "note": "Hinges upon = depends on, is contingent on",
+      "level": "C2",
+      "formality": "formal",
+      "examples": [
+        "The trajectory of development hinges upon governance quality.",
+        "The trajectory of change hinges upon collective action."
+      ]
+    },
+    {
+      "id": "bal-c1-018",
+      "expression": "In summation",
+      "context": "___ multiple dimensions warrant consideration",
+      "fullSentence": "In summation, multiple dimensions warrant consideration before definitive conclusions can be drawn.",
+      "usage": "Formal way to introduce final summary",
+      "variants": ["To recapitulate", "In sum", "To summarize"],
+      "level": "C1-C2",
+      "formality": "very formal",
+      "examples": [
+        "In summation, evidence supports measured optimism.",
+        "In summation, context determines optimal approaches."
+      ]
+    }
+  ]
+}
