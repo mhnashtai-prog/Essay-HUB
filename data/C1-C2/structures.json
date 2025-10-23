@@ -1,1 +1,396 @@
 
+{
+  "level": "C1-C2",
+  "category": "sentence_structures",
+  "structures": [
+    {
+      "id": "struct-001",
+      "type": "participle",
+      "subtype": "opening_causal",
+      "name": "Opening Participle - Causal",
+      "pattern": "Having + past participle, [main clause]",
+      "explanation": "Shows cause-effect relationship. The participle phrase sets the context or reason for the main clause.",
+      "examples": [
+        {
+          "sentence": "Having witnessed decades of policy failure, experts now advocate radical reform.",
+          "breakdown": {
+            "participle": "Having witnessed decades of policy failure",
+            "main": "experts now advocate radical reform",
+            "function": "cause"
+          }
+        },
+        {
+          "sentence": "Having been systematically marginalized, indigenous communities demand recognition.",
+          "breakdown": {
+            "participle": "Having been systematically marginalized",
+            "main": "indigenous communities demand recognition",
+            "function": "cause"
+          }
+        },
+        {
+          "sentence": "Having considered all available evidence, the committee reached a unanimous decision.",
+          "breakdown": {
+            "participle": "Having considered all available evidence",
+            "main": "the committee reached a unanimous decision",
+            "function": "cause"
+          }
+        }
+      ],
+      "practice": {
+        "combine": [
+          {
+            "simple": ["They neglected infrastructure for decades.", "The system is now collapsing."],
+            "complex": "Having neglected infrastructure for decades, the system is now collapsing."
+          },
+          {
+            "simple": ["Researchers analyzed the data thoroughly.", "They identified clear patterns."],
+            "complex": "Having analyzed the data thoroughly, researchers identified clear patterns."
+          }
+        ],
+        "transform": [
+          {
+            "original": "Because authorities failed to act early, the crisis worsened.",
+            "transformed": "Having failed to act early, authorities allowed the crisis to worsen."
+          }
+        ]
+      },
+      "commonErrors": [
+        {
+          "incorrect": "Having witnessed the evidence, the conclusion was clear.",
+          "correct": "Having witnessed the evidence, researchers concluded definitively.",
+          "explanation": "The subject of the participle must match the subject of the main clause."
+        }
+      ],
+      "level": "C1"
+    },
+    {
+      "id": "struct-002",
+      "type": "participle",
+      "subtype": "end_result",
+      "name": "End Participle - Result/Consequence",
+      "pattern": "[Main clause], [present participle phrase]",
+      "explanation": "The participle phrase at the end shows the result or consequence of the main clause action.",
+      "examples": [
+        {
+          "sentence": "Inequality has reached crisis levels, threatening the social fabric itself.",
+          "breakdown": {
+            "main": "Inequality has reached crisis levels",
+            "participle": "threatening the social fabric itself",
+            "function": "consequence"
+          }
+        },
+        {
+          "sentence": "Automation continues accelerating, displacing millions from traditional employment.",
+          "breakdown": {
+            "main": "Automation continues accelerating",
+            "participle": "displacing millions from traditional employment",
+            "function": "consequence"
+          }
+        },
+        {
+          "sentence": "Misinformation spreads virally, distorting public discourse beyond recognition.",
+          "breakdown": {
+            "main": "Misinformation spreads virally",
+            "participle": "distorting public discourse beyond recognition",
+            "function": "consequence"
+          }
+        }
+      ],
+      "practice": {
+        "combine": [
+          {
+            "simple": ["Climate change accelerates.", "It threatens coastal communities."],
+            "complex": "Climate change accelerates, threatening coastal communities."
+          },
+          {
+            "simple": ["The policy was implemented poorly.", "It created new problems."],
+            "complex": "The policy was implemented poorly, creating new problems."
+          }
+        ]
+      },
+      "level": "C1"
+    },
+    {
+      "id": "struct-003",
+      "type": "inversion",
+      "subtype": "negative",
+      "name": "Negative Inversion",
+      "pattern": "Negative word + auxiliary + subject + verb...",
+      "explanation": "Used for emphasis. After negative words (never, rarely, seldom, not only, under no circumstances), invert subject and auxiliary.",
+      "negativeWords": ["never", "rarely", "seldom", "not only", "under no circumstances", "only", "not until"],
+      "examples": [
+        {
+          "sentence": "Never before have societies faced such complex interconnected challenges.",
+          "standard": "Societies have never before faced such complex interconnected challenges.",
+          "structure": "Never + have + societies + faced"
+        },
+        {
+          "sentence": "Rarely do policymakers acknowledge the systemic nature of inequality.",
+          "standard": "Policymakers rarely acknowledge the systemic nature of inequality.",
+          "structure": "Rarely + do + policymakers + acknowledge"
+        },
+        {
+          "sentence": "Not only does this affect individuals, but it also undermines institutions.",
+          "standard": "This not only affects individuals, but it also undermines institutions.",
+          "structure": "Not only + does + this + affect"
+        },
+        {
+          "sentence": "Only by confronting uncomfortable truths can societies progress.",
+          "standard": "Societies can progress only by confronting uncomfortable truths.",
+          "structure": "Only by... + can + societies + progress"
+        }
+      ],
+      "practice": {
+        "transform": [
+          {
+            "original": "We have never seen such rapid change.",
+            "inverted": "Never have we seen such rapid change."
+          },
+          {
+            "original": "Authorities rarely consider long-term consequences.",
+            "inverted": "Rarely do authorities consider long-term consequences."
+          }
+        ]
+      },
+      "commonErrors": [
+        {
+          "incorrect": "Never societies have faced such challenges.",
+          "correct": "Never have societies faced such challenges.",
+          "explanation": "Must invert auxiliary and subject after negative word."
+        }
+      ],
+      "level": "C1-C2"
+    },
+    {
+      "id": "struct-004",
+      "type": "cleft",
+      "subtype": "it-cleft",
+      "name": "It-Cleft Sentence",
+      "pattern": "It + be + [focus] + that/who + [rest]",
+      "explanation": "Emphasizes a particular element by putting it between 'it is/was' and 'that/who'.",
+      "examples": [
+        {
+          "sentence": "It is precisely this reluctance to act that perpetuates the crisis.",
+          "standard": "This reluctance to act perpetuates the crisis.",
+          "focus": "this reluctance to act",
+          "emphasis": "Emphasizes the cause of the problem"
+        },
+        {
+          "sentence": "It is the disconnect between rhetoric and action that breeds cynicism.",
+          "standard": "The disconnect between rhetoric and action breeds cynicism.",
+          "focus": "the disconnect between rhetoric and action",
+          "emphasis": "Highlights the specific issue"
+        },
+        {
+          "sentence": "It is not technology itself but its unregulated deployment that poses risks.",
+          "standard": "Not technology itself but its unregulated deployment poses risks.",
+          "focus": "contrast between technology and its deployment",
+          "emphasis": "Clarifies what the real problem is"
+        }
+      ],
+      "practice": {
+        "transform": [
+          {
+            "original": "The lack of funding prevents progress.",
+            "cleft": "It is the lack of funding that prevents progress."
+          },
+          {
+            "original": "Policy failure caused the economic collapse.",
+            "cleft": "It was policy failure that caused the economic collapse."
+          }
+        ]
+      },
+      "level": "C1"
+    },
+    {
+      "id": "struct-005",
+      "type": "cleft",
+      "subtype": "what-cleft",
+      "name": "What-Cleft (Pseudo-Cleft)",
+      "pattern": "What + [clause] + be + [focus]",
+      "explanation": "Emphasizes information by placing it at the end of the sentence. Often used to highlight problems, concerns, or key points.",
+      "examples": [
+        {
+          "sentence": "What distinguishes effective policy is sustained commitment to implementation.",
+          "standard": "Sustained commitment to implementation distinguishes effective policy.",
+          "focus": "sustained commitment to implementation"
+        },
+        {
+          "sentence": "What concerns experts most is the accelerating pace of environmental collapse.",
+          "standard": "The accelerating pace of environmental collapse concerns experts most.",
+          "focus": "the accelerating pace of environmental collapse"
+        },
+        {
+          "sentence": "What the evidence demonstrates is systematic bias favoring established interests.",
+          "standard": "The evidence demonstrates systematic bias favoring established interests.",
+          "focus": "systematic bias favoring established interests"
+        }
+      ],
+      "variants": [
+        "What we need is...",
+        "What matters most is...",
+        "What remains unclear is..."
+      ],
+      "level": "C1-C2"
+    },
+    {
+      "id": "struct-006",
+      "type": "gerund",
+      "subtype": "subject",
+      "name": "Gerund as Subject",
+      "pattern": "[Gerund phrase] + verb...",
+      "explanation": "Using gerund (-ing form) as the subject makes writing more sophisticated and formal.",
+      "examples": [
+        {
+          "sentence": "Ignoring historical precedent risks repeating catastrophic mistakes.",
+          "simpler": "If we ignore historical precedent, we risk repeating mistakes.",
+          "gerund": "Ignoring historical precedent"
+        },
+        {
+          "sentence": "Prioritizing short-term gains over sustainability threatens future generations.",
+          "simpler": "When we prioritize short-term gains, we threaten future generations.",
+          "gerund": "Prioritizing short-term gains over sustainability"
+        },
+        {
+          "sentence": "Dismissing expert consensus as mere opinion undermines evidence-based policy.",
+          "simpler": "When people dismiss expert consensus, they undermine policy.",
+          "gerund": "Dismissing expert consensus as mere opinion"
+        }
+      ],
+      "practice": {
+        "transform": [
+          {
+            "original": "When governments delay action, they worsen the crisis.",
+            "gerund": "Delaying action worsens the crisis."
+          },
+          {
+            "original": "If we allow inequality to persist, we destabilize society.",
+            "gerund": "Allowing inequality to persist destabilizes society."
+          }
+        ]
+      },
+      "level": "C1"
+    },
+    {
+      "id": "struct-007",
+      "type": "conditional",
+      "subtype": "inverted",
+      "name": "Inverted Conditional",
+      "pattern": "Were/Had/Should + subject + verb..., [main clause]",
+      "explanation": "Very formal conditional structure. Omit 'if' and invert subject and auxiliary.",
+      "examples": [
+        {
+          "sentence": "Were authorities to implement these measures, outcomes would improve dramatically.",
+          "standard": "If authorities were to implement these measures, outcomes would improve dramatically.",
+          "type": "hypothetical future"
+        },
+        {
+          "sentence": "Had policymakers acted earlier, the crisis might have been averted.",
+          "standard": "If policymakers had acted earlier, the crisis might have been averted.",
+          "type": "past hypothetical"
+        },
+        {
+          "sentence": "Should conditions deteriorate further, intervention will become imperative.",
+          "standard": "If conditions should deteriorate further, intervention will become imperative.",
+          "type": "future possibility"
+        }
+      ],
+      "level": "C2"
+    },
+    {
+      "id": "struct-008",
+      "type": "nominalization",
+      "subtype": "abstract_subject",
+      "name": "Complex Nominal Subject",
+      "pattern": "[Abstract noun phrase] + verb...",
+      "explanation": "Using abstract nouns and nominalized verbs as subjects creates academic style.",
+      "examples": [
+        {
+          "sentence": "The persistent failure to address root causes perpetuates systemic dysfunction.",
+          "simpler": "Authorities persistently fail to address root causes, so dysfunction continues.",
+          "nominal": "The persistent failure to address root causes"
+        },
+        {
+          "sentence": "Unwillingness to challenge established paradigms hinders genuine innovation.",
+          "simpler": "People are unwilling to challenge paradigms, which hinders innovation.",
+          "nominal": "Unwillingness to challenge established paradigms"
+        },
+        {
+          "sentence": "The tendency to prioritize convenience over sustainability accelerates degradation.",
+          "simpler": "People tend to prioritize convenience, which accelerates degradation.",
+          "nominal": "The tendency to prioritize convenience over sustainability"
+        }
+      ],
+      "level": "C1-C2"
+    },
+    {
+      "id": "struct-009",
+      "type": "comparative",
+      "subtype": "correlative",
+      "name": "Correlative Comparative",
+      "pattern": "The + comparative..., the + comparative...",
+      "explanation": "Shows how two things change in relation to each other.",
+      "examples": [
+        {
+          "sentence": "The more societies delay action, the more severe the consequences become.",
+          "relationship": "delay increases → consequences worsen"
+        },
+        {
+          "sentence": "The greater the inequality, the more fragile the social contract.",
+          "relationship": "inequality increases → social contract weakens"
+        },
+        {
+          "sentence": "The faster technology advances, the wider the regulatory gap grows.",
+          "relationship": "technology speeds up → gap widens"
+        }
+      ],
+      "practice": {
+        "complete": [
+          {
+            "start": "The more complex the problem,",
+            "completion": "the more difficult the solution becomes."
+          }
+        ]
+      },
+      "level": "C1"
+    },
+    {
+      "id": "struct-010",
+      "type": "embedding",
+      "subtype": "triple",
+      "name": "Triple-Embedded Clauses",
+      "pattern": "Main clause [relative clause [relative clause [relative clause]]]",
+      "explanation": "Multiple levels of subordination for complex ideas. Use sparingly for maximum sophistication.",
+      "examples": [
+        {
+          "sentence": "Experts warn that policies which fail to address the systemic factors that perpetuate inequality will inevitably prove ineffective.",
+          "layers": [
+            "Main: Experts warn [that...]",
+            "Level 1: ...policies [which...]",
+            "Level 2: ...systemic factors [that...]"
+          ]
+        },
+        {
+          "sentence": "Research suggests that societies where institutions have lost credibility face challenges that transcend conventional political solutions.",
+          "layers": [
+            "Main: Research suggests [that...]",
+            "Level 1: ...societies [where...]",
+            "Level 2: ...challenges [that...]"
+          ]
+        }
+      ],
+      "warning": "Don't overuse - can make sentences difficult to follow.",
+      "level": "C2"
+    }
+  ],
+  "categories": {
+    "participles": ["struct-001", "struct-002"],
+    "inversion": ["struct-003"],
+    "clefts": ["struct-004", "struct-005"],
+    "gerunds": ["struct-006"],
+    "conditionals": ["struct-007"],
+    "nominalization": ["struct-008"],
+    "comparative": ["struct-009"],
+    "embedding": ["struct-010"]
+  }
+}
