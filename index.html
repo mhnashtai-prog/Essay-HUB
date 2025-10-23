@@ -1,1 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTUITY – Advanced Essay Mastery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    :root {
+      --bg: #0a0a0a;
+      --beige: #C9A961;
+      --beige-dim: rgba(201, 169, 97, 0.15);
+      --beige-border: rgba(201, 169, 97, 0.25);
+      --blue: #4a90e2;
+      --red: #b94e48;
+      --panel: rgba(28, 28, 30, 0.85);
+      --text: #e5e5e7;
+      --muted: #8e8e93;
+      --border: rgba(255, 255, 255, 0.06);
+    }
+
+    body {
+      background: #0a0a0a;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ULTRA-COMPACT HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Brand */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .logo {
+      width: 28px;
+      height: 28px;
+      background: radial-gradient(circle at 30% 30%, rgba(201, 169, 97, 0.2), transparent);
+      border: 1px solid var(--beige-border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--beige);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--beige);
+      letter-spacing: 0.5px;
+    }
+
+    /* Level Toggle - Ultra Compact */
+    .level-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--panel);
+      padding: 4px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .level-btn {
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .level-btn.active {
+      background: var(--beige);
+      color: #0a0a0a;
+      box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+    }
+
+    .level-btn:hover:not(.active) {
+      color: var(--beige);
+    }
+
+    /* Mode Navigation - Icon Based */
+    .mode-nav {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .mode-btn {
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .mode-btn:hover {
+      border-color: var(--beige-border);
+      background: var(--beige-dim);
+      transform: translateY(-1px);
+    }
+
+    .mode-btn.active {
+      background: var(--beige-dim);
+      border-color: var(--beige-border);
+      color: var(--beige);
+    }
+
+    /* Tooltip */
+    .mode-btn::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: rgba(10, 10, 10, 0.95);
+      color: var(--beige);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      border: 1px solid var(--beige-border);
+    }
+
+    .mode-btn:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* Menu Button */
+    .menu-btn {
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .menu-btn:hover {
+      border-color: var(--beige-border);
+      background: var(--beige-dim);
+    }
+
+    .menu-btn span {
+      width: 16px;
+      height: 2px;
+      background: var(--muted);
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .menu-btn:hover span {
+      background: var(--beige);
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-top: 48px;
+      min-height: calc(100vh - 48px);
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Mode Screens */
+    .mode-screen {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .mode-screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Welcome Screen */
+    .welcome {
+      text-align: center;
+      max-width: 700px;
+      margin: 60px auto;
+    }
+
+    .welcome h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      color: var(--beige);
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .welcome .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .feature-card:hover {
+      border-color: var(--beige-border);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(201, 169, 97, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--beige);
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      padding: 20px;
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--beige);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* Learn Mode Placeholder */
+    .learn-content,
+    .practice-content,
+    .structures-content,
+    .write-content {
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .mode-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      color: var(--beige);
+      margin-bottom: 16px;
+    }
+
+    .mode-description {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--beige-dim);
+      border: 1px solid var(--beige-border);
+      border-radius: 8px;
+      color: var(--beige);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Category Filter - Compact Dropdown */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .filter-dropdown {
+      position: relative;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--beige-border);
+      background: var(--beige-dim);
+    }
+
+    .filter-btn::after {
+      content: '▾';
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 4px;
+      background: rgba(28, 28, 30, 0.98);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      min-width: 200px;
+      display: none;
+      z-index: 100;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .dropdown-menu.show {
+      display: block;
+      animation: slideDown 0.2s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text);
+      transition: all 0.15s ease;
+    }
+
+    .dropdown-item:hover {
+      background: var(--beige-dim);
+      color: var(--beige);
+    }
+
+    .dropdown-item.active {
+      background: var(--beige-dim);
+      color: var(--beige);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 0 12px;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .mode-nav {
+        gap: 2px;
+      }
+
+      .mode-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+
+      .level-btn {
+        padding: 4px 10px;
+        font-size: 10px;
+      }
+
+      .welcome h1 {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    /* Structure Badge (C1/C2 only) */
+    .structures-badge {
+      display: none;
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 16px;
+      height: 16px;
+      background: var(--beige);
+      border-radius: 50%;
+      font-size: 8px;
+      font-weight: 700;
+      color: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    .mode-btn[data-mode="structures"] .structures-badge {
+      display: flex;
+    }
+
+    /* Hide structures button on B2 */
+    body.level-b2 .mode-btn[data-mode="structures"] {
+      display: none;
+    }
+  </style>
+</head>
+<body class="level-b2">
+
+  <!-- Ultra-Compact Header -->
+  <header class="header">
+    <!-- Brand -->
+    <div class="brand">
+      <div class="logo">IN</div>
+      <div class="brand-name">INTUITY</div>
+    </div>
+
+    <!-- Level Toggle -->
+    <div class="level-toggle">
+      <button class="level-btn active" data-level="b2">B2</button>
+      <button class="level-btn" data-level="c1-c2">C1/C2</button>
+    </div>
+
+    <!-- Mode Navigation -->
+    <div class="mode-nav">
+      <button class="mode-btn active" data-mode="home" data-label="Home">
+        🏠
+      </button>
+      <button class="mode-btn" data-mode="learn" data-label="Learn Expressions">
+        📚
+      </button>
+      <button class="mode-btn" data-mode="practice" data-label="Practice">
+        🎯
+      </button>
+      <button class="mode-btn" data-mode="structures" data-label="Sentence Structures">
+        🏗️
+        <span class="structures-badge">!</span>
+      </button>
+      <button class="mode-btn" data-mode="write" data-label="Write Essay">
+        ✍️
+      </button>
+    </div>
+
+    <!-- Menu Button -->
+    <button class="menu-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- HOME SCREEN -->
+      <div class="mode-screen active" data-screen="home">
+        <div class="welcome">
+          <h1>Master Advanced Essay Writing</h1>
+          <p class="subtitle">
+            Build sophisticated arguments with precise expressions, complex sentence structures, and confident academic style. 
+            From B2 proficiency to C2 mastery.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-card" data-goto="learn">
+              <div class="feature-icon">📚</div>
+              <div class="feature-title">Learn Expressions</div>
+              <div class="feature-desc">
+                Master 40+ key phrases for advantages, disadvantages, arguments, and balanced conclusions
+              </div>
+            </div>
+
+            <div class="feature-card" data-goto="practice">
+              <div class="feature-icon">🎯</div>
+              <div class="feature-title">Practice & Test</div>
+              <div class="feature-desc">
+                Comprehensive multiple-choice exercises with instant feedback and progress tracking
+              </div>
+            </div>
+
+            <div class="feature-card" data-goto="structures">
+              <div class="feature-icon">🏗️</div>
+              <div class="feature-title">Sentence Structures</div>
+              <div class="feature-desc">
+                Advanced patterns: participles, inversions, cleft sentences (C1/C2)
+              </div>
+            </div>
+
+            <div class="feature-card" data-goto="write">
+              <div class="feature-icon">✍️</div>
+              <div class="feature-title">Essay Generator</div>
+              <div class="feature-desc">
+                Build complete essays with smart suggestions and real-time preview
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-bar">
+            <div class="stat">
+              <div class="stat-value">43</div>
+              <div class="stat-label">Expressions</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">100+</div>
+              <div class="stat-label">Structures</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">10</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">∞</div>
+              <div class="stat-label">Practice</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEARN SCREEN -->
+      <div class="mode-screen" data-screen="learn">
+        <div class="learn-content">
+          <h2 class="mode-title">📚 Learn Expressions</h2>
+          <p class="mode-description">
+            Interactive flashcards with examples, usage notes, and category filters.
+            Click the expressions to see detailed breakdowns and practice in context.
+          </p>
+          
+          <div class="filter-bar">
+            <span class="filter-label">Filter by category:</span>
+            <div class="filter-dropdown">
+              <button class="filter-btn" id="categoryFilter">
+                All Categories
+              </button>
+              <div class="dropdown-menu" id="categoryDropdown">
+                <div class="dropdown-item active" data-category="all">All Categories</div>
+                <div class="dropdown-item" data-category="advantages">Introducing Advantages</div>
+                <div class="dropdown-item" data-category="disadvantages">Introducing Disadvantages</div>
+                <div class="dropdown-item" data-category="arguments">Arguments & Criticism</div>
+                <div class="dropdown-item" data-category="balancing">Balancing & Concluding</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coming-soon">Flashcard interface will be embedded here</div>
+        </div>
+      </div>
+
+      <!-- PRACTICE SCREEN -->
+      <div class="mode-screen" data-screen="practice">
+        <div class="practice-content">
+          <h2 class="mode-title">🎯 Practice & Test</h2>
+          <p class="mode-description">
+            Test your knowledge with comprehensive multiple-choice exercises. 
+            Answer all questions, submit, and get instant feedback with detailed corrections.
+          </p>
+          
+          <div class="filter-bar">
+            <span class="filter-label">Practice type:</span>
+            <div class="filter-dropdown">
+              <button class="filter-btn" id="practiceTypeFilter">
+                Multiple Choice
+              </button>
+              <div class="dropdown-menu" id="practiceTypeDropdown">
+                <div class="dropdown-item active" data-type="multiple">Multiple Choice</div>
+                <div class="dropdown-item" data-type="fillblank">Fill in the Blanks</div>
+                <div class="dropdown-item" data-type="matching">Match Expressions</div>
+                <div class="dropdown-item" data-type="transform">Sentence Transformation</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coming-soon">Practice interface will be embedded here</div>
+        </div>
+      </div>
+
+      <!-- STRUCTURES SCREEN (C1/C2 only) -->
+      <div class="mode-screen" data-screen="structures">
+        <div class="structures-content">
+          <h2 class="mode-title">🏗️ Sentence Structures</h2>
+          <p class="mode-description">
+            Master advanced sentence patterns that distinguish C1/C2 writing: 
+            participles, inversions, cleft sentences, embedded clauses, and more.
+          </p>
+          
+          <div class="filter-bar">
+            <span class="filter-label">Structure type:</span>
+            <div class="filter-dropdown">
+              <button class="filter-btn" id="structureTypeFilter">
+                All Patterns
+              </button>
+              <div class="dropdown-menu" id="structureTypeDropdown">
+                <div class="dropdown-item active" data-structure="all">All Patterns</div>
+                <div class="dropdown-item" data-structure="participles">Participial Phrases</div>
+                <div class="dropdown-item" data-structure="inversion">Inversion & Emphasis</div>
+                <div class="dropdown-item" data-structure="clefts">Cleft Sentences</div>
+                <div class="dropdown-item" data-structure="gerunds">Gerund Constructions</div>
+                <div class="dropdown-item" data-structure="conditional">Advanced Conditionals</div>
+                <div class="dropdown-item" data-structure="embedding">Embedded Clauses</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coming-soon">Structure patterns will be displayed here</div>
+        </div>
+      </div>
+
+      <!-- WRITE SCREEN -->
+      <div class="mode-screen" data-screen="write">
+        <div class="write-content">
+          <h2 class="mode-title">✍️ Essay Generator</h2>
+          <p class="mode-description">
+            Build complete essays with smart expression suggestions organized by category. 
+            Click phrases to insert them, edit in real-time, and export when ready.
+          </p>
+          
+          <div class="filter-bar">
+            <span class="filter-label">Essay section:</span>
+            <div class="filter-dropdown">
+              <button class="filter-btn" id="sectionFilter">
+                Introduction
+              </button>
+              <div class="dropdown-menu" id="sectionDropdown">
+                <div class="dropdown-item active" data-section="intro">Introduction</div>
+                <div class="dropdown-item" data-section="claim1">First Argument</div>
+                <div class="dropdown-item" data-section="claim2">Second Argument</div>
+                <div class="dropdown-item" data-section="claim3">Counter-Argument</div>
+                <div class="dropdown-item" data-section="conclusion">Conclusion</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coming-soon">Essay builder interface will be embedded here</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // State management
+    let currentLevel = 'b2';
+    let currentMode = 'home';
+
+    // DOM Elements
+    const levelBtns = document.querySelectorAll('.level-btn');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const modeScreens = document.querySelectorAll('.mode-screen');
+    const featureCards = document.querySelectorAll('.feature-card');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const categoryDropdown = document.getElementById('categoryDropdown');
+
+    // Level Toggle
+    levelBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        levelBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        currentLevel = btn.dataset.level;
+        document.body.className = `level-${currentLevel}`;
+        
+        // Show notification
+        showNotification(`Level switched to ${btn.textContent}`);
+      });
+    });
+
+    // Mode Navigation
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        switchMode(mode);
+      });
+    });
+
+    // Feature Cards Navigation
+    featureCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const goto = card.dataset.goto;
+        if (goto) switchMode(goto);
+      });
+    });
+
+    // Switch Mode Function
+    function switchMode(mode) {
+      // Check if structures is available
+      if (mode === 'structures' && currentLevel === 'b2') {
+        showNotification('⚠️ Sentence Structures available only for C1/C2');
+        return;
+      }
+
+      currentMode = mode;
+
+      // Update buttons
+      modeBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+
+      // Update screens
+      modeScreens.forEach(screen => {
+        screen.classList.toggle('active', screen.dataset.screen === mode);
+      });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Category Filter Dropdown
+    if (categoryFilter) {
+      categoryFilter.addEventListener('click', (e) => {
+        e.stopPropagation();
+        categoryDropdown.classList.toggle('show');
+      });
+
+      // Category selection
+      document.querySelectorAll('#categoryDropdown .dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          // Update active state
+          document.querySelectorAll('#categoryDropdown .dropdown-item').forEach(i => 
+            i.classList.remove('active')
+          );
+          item.classList.add('active');
+          
+          // Update button text
+          categoryFilter.textContent = item.textContent;
+          
+          // Close dropdown
+          categoryDropdown.classList.remove('show');
+          
+          // Filter logic would go here
+          const category = item.dataset.category;
+          console.log('Selected category:', category);
+        });
+      });
+    }
+
+    // Practice Type Filter
+    const practiceTypeFilter = document.getElementById('practiceTypeFilter');
+    const practiceTypeDropdown = document.getElementById('practiceTypeDropdown');
+    
+    if (practiceTypeFilter) {
+      practiceTypeFilter.addEventListener('click', (e) => {
+        e.stopPropagation();
+        practiceTypeDropdown.classList.toggle('show');
+      });
+
+      document.querySelectorAll('#practiceTypeDropdown .dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          document.querySelectorAll('#practiceTypeDropdown .dropdown-item').forEach(i => 
+            i.classList.remove('active')
+          );
+          item.classList.add('active');
+          practiceTypeFilter.textContent = item.textContent;
+          practiceTypeDropdown.classList.remove('show');
+        });
+      });
+    }
+
+    // Structure Type Filter
+    const structureTypeFilter = document.getElementById('structureTypeFilter');
+    const structureTypeDropdown = document.getElementById('structureTypeDropdown');
+    
+    if (structureTypeFilter) {
+      structureTypeFilter.addEventListener('click', (e) => {
+        e.stopPropagation();
+        structureTypeDropdown.classList.toggle('show');
+      });
+
+      document.querySelectorAll('#structureTypeDropdown .dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          document.querySelectorAll('#structureTypeDropdown .dropdown-item').forEach(i => 
+            i.classList.remove('active')
+          );
+          item.classList.add('active');
+          structureTypeFilter.textContent = item.textContent;
+          structureTypeDropdown.classList.remove('show');
+        });
+      });
+    }
+
+    // Section Filter
+    const sectionFilter = document.getElementById('sectionFilter');
+    const sectionDropdown = document.getElementById('sectionDropdown');
+    
+    if (sectionFilter) {
+      sectionFilter.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sectionDropdown.classList.toggle('show');
+      });
+
+      document.querySelectorAll('#sectionDropdown .dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          document.querySelectorAll('#sectionDropdown .dropdown-item').forEach(i => 
+            i.classList.remove('active')
+          );
+          item.classList.add('active');
+          sectionFilter.textContent = item.textContent;
+          sectionDropdown.classList.remove('show');
+        });
+      });
+    }
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+    });
+
+    // Notification System
+    function showNotification(message) {
+      // Remove existing notification
+      const existing = document.querySelector('.notification');
+      if (existing) existing.remove();
+
+      // Create notification
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background: rgba(201, 169, 97, 0.95);
+        color: #0a0a0a;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        z-index: 2000;
+        animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 2s forwards;
+        box-shadow: 0 4px 20px rgba(201, 169, 97, 0.3);
+      `;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => notification.remove(), 2500);
+    }
+
+    // Add animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideInRight {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideOutRight {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Ctrl/Cmd + number to switch modes
+      if ((e.ctrlKey || e.metaKey) && e.key >= '1' && e.key <= '5') {
+        e.preventDefault();
+        const modes = ['home', 'learn', 'practice', 'structures', 'write'];
+        const index = parseInt(e.key) - 1;
+        if (modes[index]) switchMode(modes[index]);
+      }
+      
+      // Escape to go home
+      if (e.key === 'Escape') {
+        switchMode('home');
+      }
+    });
+
+    // Menu button (placeholder for future menu)
+    document.querySelector('.menu-btn').addEventListener('click', () => {
+      showNotification('📋 Settings & Export menu coming soon');
+    });
+
+    console.log('🚀 INTUITY initialized');
+    console.log('💡 Keyboard shortcuts: Ctrl+1-5 to switch modes, Esc to go home');
+  </script>
+
+</body>
+</html>
